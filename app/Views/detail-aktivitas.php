@@ -8,7 +8,7 @@
     <!-- Meta Tags -->
     <meta name="title" content="Detail Aktivitas SonicPulse: Kegiatan Terbaru">
     <meta name="description"
-        content="Pelajari lebih lanjut tentang aktivitas terbaru yang diselenggarakan oleh SonicPulse. Dapatkan detail dan cara bergabung.">
+        content="Pelajari lebih lanjut tentang aktivitas terbaru yang diselenggarakan oleh SonicPulse">
     <title>Detail Aktivitas SonicPulse: Kegiatan Terbaru</title>
 
     <!-- Canonical URL -->

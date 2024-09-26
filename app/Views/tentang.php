@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Meta Tags -->
-    <meta name="title" content="Tentang SonicPulse: Kami dan Misi Kami">
+    <meta name="title" content="Tentang SonicPulse: Hubungi Kami untuk Pertanyaan dan Bantuan">
     <meta name="description"
-        content="Pelajari lebih lanjut tentang SonicPulse, visi kami, dan komitmen kami untuk memberikan pengalaman audio yang luar biasa.">
-    <title>Tentang SonicPulse: Kami dan Misi Kami</title>
+        content="Silakan hubungi kami untuk mendapatkan informasi lebih lanjut atau dukungan yang Anda butuhkan.">
+    <title>Tentang SonicPulse: Hubungi Kami untuk Pertanyaan dan Bantuan</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
