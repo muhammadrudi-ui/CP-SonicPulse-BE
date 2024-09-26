@@ -5,6 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SonicPulse</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<?= current_url(); ?>">
+
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="id" href="<?= base_url('/id/beranda'); ?>" />
+    <link rel="alternate" hreflang="en" href="<?= base_url('/en/home'); ?>" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>
@@ -157,7 +165,7 @@
             font-size: 28px;
             font-weight: bold;
             color: #000;
-            margin-right: 46px;
+            margin-right: 60px;
             margin-left: 6px;
         }
 
@@ -165,7 +173,7 @@
             font-size: 18px;
             color: #555;
             text-align: justify;
-            margin-right: 46px;
+            margin-right: 60px;
             margin-left: 6px;
             display: -webkit-box;
             -webkit-line-clamp: 12;
@@ -180,30 +188,13 @@
         .tentang-kami img {
             width: 80%;
             border-radius: 8px;
-            margin-left: 30px;
+            margin-left: 70px;
         }
 
         .stacked-images-container {
             display: flex;
             position: relative;
-            width: 80%;
-            margin-bottom: 18%;
-        }
-
-        .stacked-images-container img {
-            width: 80%;
-            /* Menentukan lebar gambar */
-            height: auto;
-            margin-left: 10%;
-        }
-
-        .stacked-images-container img.second {
-            position: absolute;
-            width: 75%;
-            left: 25%;
-            z-index: 1;
-            /* Membawa gambar kedua ke atas gambar pertama */
-            top: 30%;
+            width: 100%;
         }
 
         .baca-selengkapnya {
@@ -357,20 +348,27 @@
             border-radius: 8px;
         }
 
-        .icon-circle {
-            width: 100px;
-            height: 100px;
-            background-color: #F5FAFF;
-            border-radius: 80%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        .form-group {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        .icon-circle img {
-            width: 32px;
-            height: 32px;
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .form-control:focus {
+            border-color: #aaa;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Tablet 768px */
@@ -468,7 +466,7 @@
 
             .tentang-kami {
                 width: 100%;
-                height: 800px;
+                height: 820px;
             }
 
             .tentang-kami p {
@@ -549,7 +547,7 @@
 
             .tentang-kami {
                 width: 100%;
-                height: 720px;
+                height: 760px;
             }
 
             .tentang-kami p {
@@ -630,7 +628,7 @@
 
             .tentang-kami {
                 width: 100%;
-                height: 640px;
+                height: 720px;
             }
 
             .tentang-kami p {
@@ -695,9 +693,12 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-light sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="IMG/Logo.png" alt="Logo" class="logo" loading="lazy">
-            </a>
+            <?php foreach ($profils as $logo): ?>
+                <a class="navbar-brand" href="#">
+                    <img src="<?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo SonicPulse" class="logo"
+                        loading="lazy">
+                </a>
+            <?php endforeach; ?>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -705,22 +706,22 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #009EF2;" href="/">Beranda</a>
+                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('/'); ?>">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tentang">Tentang</a>
+                        <a class="nav-link" href="<?= base_url('tentang'); ?>">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="artikel">Artikel</a>
+                        <a class="nav-link" href="<?= base_url('artikel'); ?>">Artikel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="produk">Produk</a>
+                        <a class="nav-link" href="<?= base_url('produk'); ?>">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aktivitas">Aktivitas</a>
+                        <a class="nav-link" href="<?= base_url('aktivitas'); ?>">Aktivitas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="kontak">Kontak</a>
+                        <a class="nav-link" href="<?= base_url('kontak'); ?>">Kontak</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -729,7 +730,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="home">English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -749,7 +750,8 @@
                 <?php endforeach; ?>
             <?php else: ?>
                 <div class="carousel-item active">
-                    <img src="<?= base_url('IMG/default.jpg'); ?>" class="d-block w-100" alt="Default Slide" loading="lazy">
+                    <img src="<?= base_url('IMG/default.jpg'); ?>" class="d-block w-100" alt="Default Slide Corousel"
+                        loading="lazy">
                 </div>
             <?php endif; ?>
         </div>
@@ -765,9 +767,12 @@
 
 
     <!-- Logo -->
-    <div class="logo-sonic">
-        <img src="IMG/Logo.png" alt="Logo" class="image-logo" loading="lazy">
-    </div>
+    <?php foreach ($profils as $logo): ?>
+        <div class="logo-sonic">
+            <img src="<?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo SonicPulse" class="image-logo"
+                loading="lazy">
+        </div>
+    <?php endforeach; ?>
 
 
     <!-- Tentang Kami -->
@@ -777,10 +782,8 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="stacked-images-container">
-                        <img src="<?= base_url('IMG/' . $about['logo_perusahaan']); ?>" alt="Tentang Kami"
+                        <img src="<?= base_url('IMG/' . $about['foto_utama']); ?>" alt="Image Utama Tentang Kami"
                             class="img-fluid first" loading="lazy">
-                        <img src="<?= base_url('IMG/' . $about['logo_perusahaan']); ?>" alt="Tentang Kami"
-                            class="img-fluid second" loading="lazy">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -804,8 +807,8 @@
             <?php foreach ($produks as $p): ?>
                 <a href="<?= base_url('produk/' . $p['id_produk']); ?>" style="text-decoration: none; color: #009EF2;">
                     <div class="card">
-                        <img src="<?= base_url('IMG/' . $p['foto_produk']); ?>" class="card-img-top" alt="..."
-                            loading="lazy">
+                        <img src="<?= base_url('IMG/' . $p['foto_produk']); ?>" class="card-img-top"
+                            alt="Image Produk SonicPulse" loading="lazy">
                         <div class="card-body">
                             <h4 class="card-title"><?= $p['nama_produk_in']; ?></h4>
                         </div>
@@ -824,8 +827,8 @@
                 <a href="<?= base_url('aktivitas/' . $aktiv['id_aktivitas']); ?>"
                     style="text-decoration: none; color: inherit;">
                     <div class="card">
-                        <img src="<?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top" alt="..."
-                            loading="lazy">
+                        <img src="<?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top"
+                            alt="Image Aktivitas SonicPulse" loading="lazy">
                         <div class="card-body">
                             <h4 class="card-title"><?= $aktiv['nama_aktivitas_in']; ?></h4>
                             <p class="card-text"><?= $aktiv['deskripsi_aktivitas_in']; ?></p>
@@ -842,32 +845,33 @@
         <h1 class="text-center">Kontak Kami</h1>
         <?php foreach ($profils as $p): ?>
             <div class="map-container">
-                <iframe src="<?= $p['link_maps']; ?>" allowfullscreen="" loading="lazy"></iframe>
+                <iframe
+                    src="<?= $p['link_maps']; ?>https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.7154260405!2d106.68943071640627!3d-6.229386734889665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e4c63ab555%3A0xb56e1f64ffb010b!2sManchester!5e0!3m2!1sen!2sid!4v1687355172765!5m2!1sen!2sid"
+                    allowfullscreen="" loading="lazy"></iframe>
             </div>
+
             <div class="container kontak-kami text-center">
-                <h3>Hubungi Kami</h3>
+                <h3>Hubungi Kami disini</h3>
                 <div class="row mt-4">
-                    <div class="col-md-4 d-flex flex-column align-items-center">
-                        <div class="icon-circle mb-2">
-                            <img src="IMG/IconLoc.svg" alt="Address Icon" loading="lazy">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="alamat">Alamat:</label>
+                            <input type="text" id="alamat" value="<?= $p['alamat']; ?>" readonly class="form-control">
                         </div>
-                        <p><?= $p['alamat']; ?></p>
                     </div>
 
-                    <div class="col-md-4 d-flex flex-column align-items-center">
-                        <a href="<?= $p['link_whatsapp'] ?>" target="_blank">
-                            <div class="icon-circle mb-2">
-                                <img src="IMG/IconPhone.svg" alt="Phone Icon" loading="lazy">
-                            </div>
-                        </a>
-                        <p><?= $p['no_hp']; ?></p>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="no_hp">Telepon:</label>
+                            <input type="tel" id="no_hp" value="<?= $p['no_hp']; ?>" readonly class="form-control">
+                        </div>
                     </div>
 
-                    <div class="col-md-4 d-flex flex-column align-items-center">
-                        <div class="icon-circle mb-2">
-                            <img src="IMG/IconEmail.svg" alt="Email Icon" loading="lazy">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" value="<?= $p['email']; ?>" readonly class="form-control">
                         </div>
-                        <p><?= $p['email']; ?></p>
                     </div>
                 </div>
             </div>
@@ -875,54 +879,12 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background-color: #F5FAFF;">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="mb-3 text">footer content</h5>
-                    <p style="color: #555;">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                        voluptatem veniam, est atque cumque eum delectus sint!
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-3 text-dark">links</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Instagram</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Facebook</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Twitter</a>
-                        </li>
-                        <li>
-                            <a href="#!" style="color: #555;">Safety</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-1 text-dark">opening hours</h5>
-                    <table class="table" style="border-color: #666;">
-                        <tbody>
-                            <tr>
-                                <td style="color: #555;">Mon - Fri:</td>
-                                <td style="color: #555;">8am - 9pm</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #555;">Sat - Sun:</td>
-                                <td style="color: #555;">8am - 1am</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="text-center p-3" style="background-color: #555; color:#ffff;"> © 2020 Copyright: Muhammad Rudi</div>
-        <!-- Copyright -->
-    </footer>
+    <?php foreach ($profils as $footer): ?>
+        <footer>
+            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
+                <?= $footer['teks_footer']; ?>
+        </footer>
+    <?php endforeach; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">

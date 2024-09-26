@@ -14,6 +14,13 @@
             font-family: 'Manrope', sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        footer {
+            margin-top: auto;
         }
 
         .row {
@@ -152,25 +159,6 @@
             margin-bottom: 20px;
         }
 
-        .thumbnail-images {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            gap: 30px;
-        }
-
-        .thumbnail-images img {
-            width: 18%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .thumbnail-images img:hover {
-            transform: scale(1.1);
-        }
-
         .activity-content {
             text-align: justify;
             font-size: 18px;
@@ -262,14 +250,6 @@
                 max-height: 300px;
             }
 
-            .thumbnail-images img {
-                width: 25%;
-            }
-
-            .thumbnail-images {
-                gap: 25px;
-            }
-
             .activity-content {
                 font-size: 18px;
             }
@@ -323,14 +303,6 @@
 
             .main-image {
                 max-height: 300px;
-            }
-
-            .thumbnail-images img {
-                width: 25%;
-            }
-
-            .thumbnail-images {
-                gap: 20px;
             }
 
             .activity-content {
@@ -388,14 +360,6 @@
                 max-height: 300px;
             }
 
-            .thumbnail-images img {
-                width: 25%;
-            }
-
-            .thumbnail-images {
-                gap: 15px;
-            }
-
             .activity-content {
                 font-size: 14px;
             }
@@ -451,14 +415,6 @@
                 max-height: 300px;
             }
 
-            .thumbnail-images img {
-                width: 25%;
-            }
-
-            .thumbnail-images {
-                gap: 10px;
-            }
-
             .activity-content {
                 font-size: 12px;
             }
@@ -505,7 +461,6 @@
                     <img src="<?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo" class="logo" loading="lazy">
                 </a>
             <?php endforeach; ?>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -537,7 +492,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="/activity/<?= $aktivitas['id_aktivitas'] ?>">English</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -557,13 +513,6 @@
         <!-- Gambar Utama -->
         <img src="<?= base_url('IMG/' . $aktivitas['foto_aktivitas']); ?>" class="main-image" alt="Main Activity Image"
             loading="lazy">
-
-        <!-- Thumbnail Gambar -->
-        <div class="thumbnail-images">
-            <img src="<?= base_url('IMG/' . $aktivitas['foto_aktivitas']); ?>" alt="Thumbnail 1" loading="lazy">
-            <img src="<?= base_url('IMG/' . $aktivitas['foto_aktivitas']); ?>" alt="Thumbnail 2" loading="lazy">
-            <img src="<?= base_url('IMG/' . $aktivitas['foto_aktivitas']); ?>" alt="Thumbnail 3" loading="lazy">
-        </div>
 
         <!-- Isi Aktivitas -->
         <div class="activity-content">
@@ -606,65 +555,18 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background-color: #F5FAFF;">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="mb-3 text">footer content</h5>
-                    <p style="color: #555;">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                        voluptatem veniam, est atque cumque eum delectus sint!
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-3 text-dark">links</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Instagram</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Facebook</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Twitter</a>
-                        </li>
-                        <li>
-                            <a href="#!" style="color: #555;">Safety</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-1 text-dark">opening hours</h5>
-                    <table class="table" style="border-color: #666;">
-                        <tbody>
-                            <tr>
-                                <td style="color: #555;">Mon - Fri:</td>
-                                <td style="color: #555;">8am - 9pm</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #555;">Sat - Sun:</td>
-                                <td style="color: #555;">8am - 1am</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="text-center p-3" style="background-color: #555; color:#ffff;"> © 2020 Copyright: Muhammad Rudi</div>
-        <!-- Copyright -->
-    </footer>
+    <?php foreach ($profils as $footer): ?>
+        <footer>
+            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
+                <?= $footer['teks_footer']; ?>
+        </footer>
+    <?php endforeach; ?>
 
     <!-- Script -->
     <!-- Dropdown Nav -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-    <!-- Hover Change Image -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-        integrity="sha384-cuYeOHQWn+RovvM7K5YKeKZ4MQK5K5QQGIfNY/VCw7J1D9F7jL+6Xb5ZBIj2M1J3e/ZiJb7BpuZWglJ"
-        crossorigin="anonymous">
-        </script>
 
     <script>
         // Hide loader after page loads

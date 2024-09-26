@@ -14,6 +14,13 @@
             font-family: 'Manrope', sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        footer {
+            margin-top: auto;
         }
 
         .row {
@@ -181,20 +188,27 @@
             border-radius: 8px;
         }
 
-        .icon-circle {
-            width: 100px;
-            height: 100px;
-            background-color: #F5FAFF;
-            border-radius: 80%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        .form-group {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        .icon-circle img {
-            width: 32px;
-            height: 32px;
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .form-control:focus {
+            border-color: #aaa;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Tablet 768px */
@@ -213,11 +227,6 @@
 
             .kontak-kami h1 {
                 font-size: 28px;
-            }
-
-            .icon-circle {
-                width: 80px;
-                height: 80px;
             }
 
             .kontak-kami h3 {
@@ -250,11 +259,6 @@
             .kontak-kami h1 {
                 font-size: 24px;
                 margin-bottom: 40px;
-            }
-
-            .icon-circle {
-                width: 70px;
-                height: 70px;
             }
 
             .kontak-kami p {
@@ -293,11 +297,6 @@
                 font-size: 22px;
             }
 
-            .icon-circle {
-                width: 60px;
-                height: 60px;
-            }
-
             .kontak-kami p {
                 font-size: 14px;
             }
@@ -334,11 +333,6 @@
                 margin-bottom: 20px;
             }
 
-            .icon-circle {
-                width: 50px;
-                height: 50px;
-            }
-
             .kontak-kami p {
                 font-size: 12px;
             }
@@ -364,9 +358,11 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-light sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="IMG/Logo.png" alt="Logo" class="logo" loading="lazy">
-            </a>
+            <?php foreach ($profils as $logo): ?>
+                <a class="navbar-brand" href="#">
+                    <img src="<?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo" class="logo" loading="lazy">
+                </a>
+            <?php endforeach; ?>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -374,22 +370,22 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Beranda</a>
+                        <a class="nav-link" href="<?= base_url('/'); ?>">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tentang">Tentang</a>
+                        <a class="nav-link" href="<?= base_url('tentang'); ?>">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="artikel">Artikel</a>
+                        <a class="nav-link" href="<?= base_url('artikel'); ?>">Artikel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="produk">Produk</a>
+                        <a class="nav-link" href="<?= base_url('produk'); ?>">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aktivitas">Aktivitas</a>
+                        <a class="nav-link" href="<?= base_url('aktivitas'); ?>">Aktivitas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #009EF2;" href="kontak">Kontak</a>
+                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('kontak'); ?>">Kontak</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -398,7 +394,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="contact">English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -423,82 +419,39 @@
             <div class="container kontak-kami text-center">
                 <h3>Hubungi Kami</h3>
                 <div class="row mt-4">
-                    <div class="col-md-4 d-flex flex-column align-items-center">
-                        <div class="icon-circle mb-2">
-                            <img src="IMG/IconLoc.svg" alt="Address Icon" loading="lazy">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="alamat">Alamat:</label>
+                            <input type="text" id="alamat" value="<?= $p['alamat']; ?>" readonly class="form-control">
                         </div>
-                        <p><?= $p['alamat']; ?></p>
                     </div>
 
-                    <div class="col-md-4 d-flex flex-column align-items-center">
-                        <a href="<?= $p['link_whatsapp'] ?>" target="_blank">
-                            <div class="icon-circle mb-2">
-                                <img src="IMG/IconPhone.svg" alt="Phone Icon" loading="lazy">
-                            </div>
-                        </a>
-                        <p><?= $p['no_hp']; ?></p>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="no_hp">Telepon:</label>
+                            <input type="tel" id="no_hp" value="<?= $p['no_hp']; ?>" readonly class="form-control">
+                        </div>
                     </div>
 
-                    <div class="col-md-4 d-flex flex-column align-items-center">
-                        <div class="icon-circle mb-2">
-                            <img src="IMG/IconEmail.svg" alt="Email Icon" loading="lazy">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" value="<?= $p['email']; ?>" readonly class="form-control">
                         </div>
-                        <p><?= $p['email']; ?></p>
                     </div>
                 </div>
             </div>
+
         <?php endforeach; ?>
     </div>
 
     <!-- Footer -->
-    <footer style="background-color: #F5FAFF;">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="mb-3 text">footer content</h5>
-                    <p style="color: #555;">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                        voluptatem veniam, est atque cumque eum delectus sint!
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-3 text-dark">links</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Instagram</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Facebook</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Twitter</a>
-                        </li>
-                        <li>
-                            <a href="#!" style="color: #555;">Safety</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-1 text-dark">opening hours</h5>
-                    <table class="table" style="border-color: #666;">
-                        <tbody>
-                            <tr>
-                                <td style="color: #555;">Mon - Fri:</td>
-                                <td style="color: #555;">8am - 9pm</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #555;">Sat - Sun:</td>
-                                <td style="color: #555;">8am - 1am</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="text-center p-3" style="background-color: #555; color:#ffff;"> © 2020 Copyright: Muhammad Rudi</div>
-        <!-- Copyright -->
-    </footer>
+    <?php foreach ($profils as $footer): ?>
+        <footer>
+            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
+                <?= $p['teks_footer']; ?>
+        </footer>
+    <?php endforeach; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

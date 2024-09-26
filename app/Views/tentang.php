@@ -14,6 +14,13 @@
             font-family: 'Manrope', sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        footer {
+            margin-top: auto;
         }
 
         .row {
@@ -336,9 +343,11 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-light sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="IMG/Logo.png" alt="Logo" class="logo" loading="lazy">
-            </a>
+            <?php foreach ($profils as $logo): ?>
+                <a class="navbar-brand" href="#">
+                    <img src="<?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo" class="logo" loading="lazy">
+                </a>
+            <?php endforeach; ?>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -346,22 +355,22 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Beranda</a>
+                        <a class="nav-link" href="<?= base_url('/'); ?>">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #009EF2;" href="tentang">Tentang</a>
+                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('tentang'); ?>">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="artikel">Artikel</a>
+                        <a class="nav-link" href="<?= base_url('artikel'); ?>">Artikel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="produk">Produk</a>
+                        <a class="nav-link" href="<?= base_url('produk'); ?>">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aktivitas">Aktivitas</a>
+                        <a class="nav-link" href="<?= base_url('aktivitas'); ?>">Aktivitas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="kontak">Kontak</a>
+                        <a class="nav-link" href="<?= base_url('kontak'); ?>">Kontak</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -370,7 +379,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="about">English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -386,7 +395,7 @@
     <!-- Tentang Kami -->
     <div class="container tentang-kami mt-5 mb-5">
         <div class="row align-items-center">
-            <?php foreach ($data as $tentang): ?>
+            <?php foreach ($profils as $tentang): ?>
                 <div class="col-md-6">
                     <div class="headline">
                         <p><?= $tentang['nama_perusahaan']; ?></p>
@@ -394,62 +403,20 @@
                     <p><?= $tentang['deskripsi_perusahaan_in']; ?></p>
                 </div>
                 <div class="col-md-6">
-                    <img src="<?= base_url('IMG/' . $tentang['logo_perusahaan']); ?>" alt="Image Tentang Kami"
-                        class="img-fluid" loading="lazy">
+                    <img src="<?= base_url('IMG/' . $tentang['foto_utama']); ?>" alt="Image Tentang Kami" class="img-fluid"
+                        loading="lazy">
                 </div>
             <?php endforeach; ?>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer style="background-color: #F5FAFF;">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="mb-3 text">footer content</h5>
-                    <p style="color: #555;">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                        voluptatem veniam, est atque cumque eum delectus sint!
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-3 text-dark">links</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Instagram</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Facebook</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Twitter</a>
-                        </li>
-                        <li>
-                            <a href="#!" style="color: #555;">Safety</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-1 text-dark">opening hours</h5>
-                    <table class="table" style="border-color: #666;">
-                        <tbody>
-                            <tr>
-                                <td style="color: #555;">Mon - Fri:</td>
-                                <td style="color: #555;">8am - 9pm</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #555;">Sat - Sun:</td>
-                                <td style="color: #555;">8am - 1am</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="text-center p-3" style="background-color: #555; color:#ffff;"> © 2020 Copyright: Muhammad Rudi</div>
-        <!-- Copyright -->
-    </footer>
+    <?php foreach ($profils as $footer): ?>
+        <footer>
+            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
+                <?= $footer['teks_footer']; ?>
+        </footer>
+    <?php endforeach; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

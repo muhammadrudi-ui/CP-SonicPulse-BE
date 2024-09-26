@@ -14,6 +14,13 @@
             font-family: 'Manrope', sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        footer {
+            margin-top: auto;
         }
 
         .row {
@@ -169,18 +176,14 @@
         }
 
         .recommendation-content {
-            display: flex;
-            flex-direction: column;
-
+            word-break: break-word;
         }
 
         .recommendation-title {
             font-size: 20px;
             font-weight: 700;
-            margin: 0;
             display: -webkit-box;
             -webkit-line-clamp: 2;
-            /* Menentukan batas maksimal 2 baris */
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -428,7 +431,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="/article/<?= $artikel['id_artikel'] ?>">English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -454,7 +457,8 @@
                     </p>
                     <img src="<?= base_url('IMG/' . $artikel['foto_artikel']); ?>" class="img-fluid mb-4"
                         style="border-radius: 12px" alt="Artikel Image" loading="lazy">
-                    <p class="card-text text-justify"><?= $artikel['deskripsi_artikel']; ?></p>
+                    <p class="card-text text-justify"><?= $artikel['deskripsi_artikel']; ?>
+                    </p>
                 </div>
             </div>
 
@@ -471,7 +475,8 @@
                                 <div class="recommendation-content">
                                     <h6 class="recommendation-title"><?= $artikel['judul_artikel']; ?>
                                     </h6>
-                                    <p class="recommendation-date"><?= date('Y-m-d', strtotime($artikel['created_at'])); ?>
+                                    <p class=" recommendation-date">
+                                        <?= date('Y-m-d', strtotime($artikel['created_at'])); ?>
                                     </p>
                                 </div>
                             </div>
@@ -480,62 +485,16 @@
                 </div>
             </div>
 
-
-
         </div>
     </div>
 
-
-
     <!-- Footer -->
-    <footer style="background-color: #F5FAFF;">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="mb-3 text">footer content</h5>
-                    <p style="color: #555;">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                        voluptatem veniam, est atque cumque eum delectus sint!
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-3 text-dark">links</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Instagram</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Facebook</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Twitter</a>
-                        </li>
-                        <li>
-                            <a href="#!" style="color: #555;">Safety</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-1 text-dark">opening hours</h5>
-                    <table class="table" style="border-color: #666;">
-                        <tbody>
-                            <tr>
-                                <td style="color: #555;">Mon - Fri:</td>
-                                <td style="color: #555;">8am - 9pm</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #555;">Sat - Sun:</td>
-                                <td style="color: #555;">8am - 1am</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="text-center p-3" style="background-color: #555; color:#ffff;"> © 2020 Copyright: Muhammad Rudi</div>
-        <!-- Copyright -->
-    </footer>
+    <?php foreach ($profils as $footer): ?>
+        <footer>
+            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
+                <?= $footer['teks_footer']; ?>
+        </footer>
+    <?php endforeach; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

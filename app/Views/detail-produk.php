@@ -14,6 +14,13 @@
             font-family: 'Manrope', sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        footer {
+            margin-top: auto;
         }
 
         .row {
@@ -130,12 +137,6 @@
             font-weight: 500;
         }
 
-        .product-gallery {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
         .main-image {
             width: 100%;
             max-width: 600px;
@@ -145,24 +146,6 @@
             /* Menjaga proporsi gambar */
             margin-bottom: 10px;
             border-radius: 12px;
-        }
-
-        .thumbnails {
-            display: flex;
-            gap: 20px;
-        }
-
-        .thumbnail {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            cursor: pointer;
-            border: 2px solid transparent;
-            border-radius: 8px;
-        }
-
-        .thumbnail.active {
-            border-color: #009EF2;
         }
 
         .product-description {
@@ -252,15 +235,6 @@
                 max-height: 220px;
             }
 
-            .thumbnails {
-                gap: 8px;
-            }
-
-            .thumbnail {
-                width: 70px;
-                height: 55px;
-            }
-
             .product-description {
                 padding: 18px;
             }
@@ -308,16 +282,6 @@
 
             .main-image {
                 max-height: 240px;
-            }
-
-            .thumbnails {
-                gap: 10px;
-                margin-bottom: 12px;
-            }
-
-            .thumbnail {
-                width: 75px;
-                height: 60px;
             }
 
             .product-description {
@@ -368,16 +332,6 @@
                 max-height: 220px;
             }
 
-            .thumbnails {
-                gap: 8px;
-                margin-bottom: 12px;
-            }
-
-            .thumbnail {
-                width: 70px;
-                height: 55px;
-            }
-
             .product-description {
                 padding: 14px;
             }
@@ -424,16 +378,6 @@
 
             .main-image {
                 max-height: 180px;
-            }
-
-            .thumbnails {
-                gap: 6px;
-                margin-bottom: 12px;
-            }
-
-            .thumbnail {
-                width: 65px;
-                height: 50px;
             }
 
             .product-description {
@@ -511,7 +455,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="/product/<?= $produk['id_produk'] ?>">English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -528,24 +472,9 @@
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-6">
-                <div class="product-gallery">
-                    <!-- Main Image -->
-                    <img id="mainImage" src="<?= base_url('IMG/' . $produk['foto_produk']); ?>" class="main-image"
-                        alt="Main Product Image" loading="lazy">
-
-                    <!-- Thumbnails -->
-                    <div class="thumbnails">
-                        <img src="<?= base_url('IMG/' . $produk['foto_produk']); ?>" class="thumbnail active"
-                            alt="Thumbnail 1" onclick="changeImage('<?= base_url('IMG/' . $produk['foto_produk']); ?>')"
-                            loading="lazy">
-                        <img src="<?= base_url('IMG/' . $produk['foto_produk']); ?>" class="thumbnail" alt="Thumbnail 2"
-                            onclick="changeImage('<?= base_url('IMG/' . $produk['foto_produk']); ?>')" loading="lazy">
-                        <img src="<?= base_url('IMG/' . $produk['foto_produk']); ?>" class="thumbnail" alt="Thumbnail 2"
-                            onclick="changeImage('<?= base_url('IMG/' . $produk['foto_produk']); ?>')" loading="lazy">
-                    </div>
-                </div>
+                <img src="<?= base_url('IMG/' . $produk['foto_produk']); ?>" class="main-image" alt="Main Product Image"
+                    loading="lazy">
             </div>
-
             <div class="col-md-6">
                 <div class="product-description">
                     <h2><?= $produk['nama_produk_in']; ?></h2>
@@ -567,6 +496,12 @@
     <!-- card Produk -->
     <div class="container mt-4 mb-5">
         <div class="row">
+
+            <?php
+            // Debugging: Cek jumlah produk terkait
+            echo '<p>Jumlah produk terkait: ' . count($produkTerkait) . '</p>';
+            ?>
+
             <?php foreach ($produkTerkait as $produk): ?>
                 <!-- Card Produk Terkait -->
                 <div class="col-md-4">
@@ -585,85 +520,19 @@
         </div>
     </div>
 
-
     <!-- Footer -->
-    <footer style="background-color: #F5FAFF;">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="mb-3 text">footer content</h5>
-                    <p style="color: #555;">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                        voluptatem veniam, est atque cumque eum delectus sint!
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-3 text-dark">links</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Instagram</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Facebook</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="#!" style="color: #555;">Twitter</a>
-                        </li>
-                        <li>
-                            <a href="#!" style="color: #555;">Safety</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-1 text-dark">opening hours</h5>
-                    <table class="table" style="border-color: #666;">
-                        <tbody>
-                            <tr>
-                                <td style="color: #555;">Mon - Fri:</td>
-                                <td style="color: #555;">8am - 9pm</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #555;">Sat - Sun:</td>
-                                <td style="color: #555;">8am - 1am</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="text-center p-3" style="background-color: #555; color:#ffff;"> © 2020 Copyright: Muhammad Rudi</div>
-        <!-- Copyright -->
-    </footer>
+    <?php foreach ($profils as $footer): ?>
+        <footer>
+            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
+                <?= $footer['teks_footer']; ?>
+        </footer>
+    <?php endforeach; ?>
 
     <!-- Script -->
     <!-- Dropdown Nav -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-
-    <!-- Change Imgae -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz4fnFO9gybV5xjU8bhFSl8t1gVm1KgiJT7ljI6Gx7JRc73sarT05Pyy6K"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-        integrity="sha384-cuYeBkoS1Kr5yzHIr6qI8IXIRyYWIQwWtn+Y7EWwCQ73SIW3eCufzzxcJ08BJN1M"
-        crossorigin="anonymous"></script>
-
-    <script>
-        function changeImage(imageSrc) {
-            const mainImage = document.getElementById('mainImage');
-            mainImage.src = imageSrc;
-
-            const thumbnails = document.querySelectorAll('.thumbnail');
-            thumbnails.forEach(thumbnail => {
-                thumbnail.classList.remove('active');
-            });
-
-            const activeThumbnail = document.querySelector(`.thumbnail[src="${imageSrc}"]`);
-            activeThumbnail.classList.add('active');
-        }
-    </script>
 
     <script>
         // Hide loader after page loads
