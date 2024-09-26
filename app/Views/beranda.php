@@ -4,7 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SonicPulse</title>
+
+    <!-- Meta Tags -->
+    <meta name="title" content="SonicPulse: Selamat Datang di Dunia Audio Berkualitas">
+    <meta name="description"
+        content="Temukan pengalaman audio terbaik dengan SonicPulse. Nikmati berbagai produk audio berkualitas tinggi yang dirancang untuk memuaskan telinga Anda.">
+    <title>SonicPulse: Selamat Datang di Dunia Audio Berkualitas</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">

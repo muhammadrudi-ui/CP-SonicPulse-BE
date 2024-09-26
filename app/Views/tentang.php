@@ -4,7 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SonicPulse</title>
+
+    <!-- Meta Tags -->
+    <meta name="title" content="Tentang SonicPulse: Kami dan Misi Kami">
+    <meta name="description"
+        content="Pelajari lebih lanjut tentang SonicPulse, visi kami, dan komitmen kami untuk memberikan pengalaman audio yang luar biasa.">
+    <title>Tentang SonicPulse: Kami dan Misi Kami</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<?= current_url(); ?>">
+
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="id" href="<?= base_url('/id/tentang'); ?>" />
+    <link rel="alternate" hreflang="en" href="<?= base_url('/en/about'); ?>" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>
@@ -345,7 +358,7 @@
         <div class="container-fluid">
             <?php foreach ($profils as $logo): ?>
                 <a class="navbar-brand" href="#">
-                    <img src="<?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo" class="logo" loading="lazy">
+                    <img src=" <?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo" class="logo" loading="lazy">
                 </a>
             <?php endforeach; ?>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -398,12 +411,16 @@
             <?php foreach ($profils as $tentang): ?>
                 <div class="col-md-6">
                     <div class="headline">
-                        <p><?= $tentang['nama_perusahaan']; ?></p>
+                        <p>
+                            <?= $tentang['nama_perusahaan']; ?>
+                        </p>
                     </div>
-                    <p><?= $tentang['deskripsi_perusahaan_in']; ?></p>
+                    <p>
+                        <?= $tentang['deskripsi_perusahaan_in']; ?>
+                    </p>
                 </div>
                 <div class="col-md-6">
-                    <img src="<?= base_url('IMG/' . $tentang['foto_utama']); ?>" alt="Image Tentang Kami" class="img-fluid"
+                    <img src=" <?= base_url('IMG/' . $tentang['foto_utama']); ?>" alt="Image Tentang Kami" class="img-fluid"
                         loading="lazy">
                 </div>
             <?php endforeach; ?>
@@ -413,7 +430,8 @@
     <!-- Footer -->
     <?php foreach ($profils as $footer): ?>
         <footer>
-            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
+            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy;
+                <?= date('Y'); ?> Copyright:
                 <?= $footer['teks_footer']; ?>
         </footer>
     <?php endforeach; ?>

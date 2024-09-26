@@ -4,7 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SonicPulse</title>
+
+    <!-- Meta Tags -->
+    <meta name="title" content="Contact SonicPulse: Get in Touch">
+    <meta name="description"
+        content="If you have any questions or would like to collaborate, reach out to the SonicPulse team through the following contact information.">
+    <title>Contact SonicPulse: Get in Touch</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<?= current_url(); ?>">
+
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="en" href="<?= base_url('/en/contact'); ?>" />
+    <link rel="alternate" hreflang="id" href="<?= base_url('/id/kontak'); ?>" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>

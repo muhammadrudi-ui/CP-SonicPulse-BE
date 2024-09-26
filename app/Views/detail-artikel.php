@@ -4,7 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SonicPulse</title>
+
+    <!-- Meta Tags -->
+    <meta name="title" content="Detail Artikel SonicPulse: Insight dan Informasi">
+    <meta name="description"
+        content="Dapatkan wawasan dan informasi mendalam tentang audio melalui artikel kami yang terbaru dan paling relevan.">
+    <title>Detail Artikel SonicPulse: Insight dan Informasi</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<?= current_url(); ?>">
+
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="id" href="<?= base_url('/id/artikel/' . $artikel['id_artikel']); ?>" />
+    <link rel="alternate" hreflang="en" href="<?= base_url('/en/article/' . $artikel['id_artikel']); ?>" />
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>

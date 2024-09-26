@@ -4,7 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SonicPulse</title>
+
+    <!-- Meta Tags -->
+    <meta name="title" content="Detail Produk SonicPulse: Temukan Audio Ideal Anda">
+    <meta name="description"
+        content="Jelajahi detail produk SonicPulse dan temukan audio ideal yang cocok untuk kebutuhan Anda.">
+    <title>Detail Produk SonicPulse: Temukan Audio Ideal Anda</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<?= current_url(); ?>">
+
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="id" href="<?= base_url('/id/produk/' . $produk['id_produk']); ?>" />
+    <link rel="alternate" hreflang="en" href="<?= base_url('/en/product/' . $produk['id_produk']); ?>" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>
@@ -476,10 +489,13 @@
                     loading="lazy">
             </div>
             <div class="col-md-6">
-                <div class="product-description">
-                    <h2><?= $produk['nama_produk_in']; ?></h2>
+                <div class=" product-description">
+                    <h2>
+                        <?= $produk['nama_produk_in']; ?>
+                    </h2>
                     <!-- Deskripsi -->
-                    <p style="color: #555;"><?= $produk['deskripsi_produk_in']; ?></p>
+                    <p style="color: #555;"><?= $produk['deskripsi_produk_in']; ?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -495,12 +511,10 @@
 
     <!-- card Produk -->
     <div class="container mt-4 mb-5">
-        <div class="row">
-
-            <?php
-            // Debugging: Cek jumlah produk terkait
-            echo '<p>Jumlah produk terkait: ' . count($produkTerkait) . '</p>';
-            ?>
+        <div class="row"> <?php
+        // Debugging: Cek jumlah produk terkait
+        echo '<p>Jumlah produk terkait: ' . count($produkTerkait) . '</p>';
+        ?>
 
             <?php foreach ($produkTerkait as $produk): ?>
                 <!-- Card Produk Terkait -->
@@ -511,7 +525,9 @@
                             <img src="<?= base_url('IMG/' . $produk['foto_produk']); ?>" class="card-img-top" alt="..."
                                 loading="lazy">
                             <div class="card-body">
-                                <h3 class="card-title text-center"><?= $produk['nama_produk_in']; ?></h3>
+                                <h3 class="card-title text-center">
+                                    <?= $produk['nama_produk_in']; ?>
+                                </h3>
                             </div>
                         </div>
                     </a>
@@ -523,7 +539,8 @@
     <!-- Footer -->
     <?php foreach ($profils as $footer): ?>
         <footer>
-            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
+            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy;
+                <?= date('Y'); ?> Copyright:
                 <?= $footer['teks_footer']; ?>
         </footer>
     <?php endforeach; ?>
