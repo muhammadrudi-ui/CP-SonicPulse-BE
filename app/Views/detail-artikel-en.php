@@ -151,6 +151,18 @@
             font-weight: 500;
         }
 
+        .img-fluid {
+            width: 1000px;
+            /* Set a fixed width */
+            height: 380px;
+            /* Set a fixed height */
+            border-radius: 12px;
+            object-fit: cover;
+            /* Ensure the image is scaled to fit the container */
+            margin: 0 auto;
+            /* Center the image horizontally */
+        }
+
         .card-text {
             font-size: 18px;
             text-align: justify;
@@ -181,11 +193,13 @@
         }
 
         .recommendation-image {
-            width: 130px;
+            width: 140px;
             height: 100px;
             border-radius: 8px;
             object-fit: cover;
             margin-right: 12px;
+            object-position: center;
+            flex-shrink: 0;
         }
 
         .recommendation-content {
@@ -223,6 +237,18 @@
 
             h1 {
                 font-size: 28px;
+            }
+
+            .img-fluid {
+                width: 800px;
+                /* Set a fixed width */
+                height: 380px;
+                /* Set a fixed height */
+                border-radius: 12px;
+                object-fit: cover;
+                /* Ensure the image is scaled to fit the container */
+                margin: 0 auto;
+                /* Center the image horizontally */
             }
 
             h2 {
@@ -272,6 +298,18 @@
                 font-size: 24px;
             }
 
+            .img-fluid {
+                width: 800px;
+                /* Set a fixed width */
+                height: 280px;
+                /* Set a fixed height */
+                border-radius: 12px;
+                object-fit: cover;
+                /* Ensure the image is scaled to fit the container */
+                margin: 0 auto;
+                /* Center the image horizontally */
+            }
+
             h2 {
                 font-size: 22px;
             }
@@ -319,6 +357,18 @@
                 font-size: 22px;
             }
 
+            .img-fluid {
+                width: 800px;
+                /* Set a fixed width */
+                height: 230px;
+                /* Set a fixed height */
+                border-radius: 12px;
+                object-fit: cover;
+                /* Ensure the image is scaled to fit the container */
+                margin: 0 auto;
+                /* Center the image horizontally */
+            }
+
             h2 {
                 font-size: 20px;
             }
@@ -364,6 +414,18 @@
 
             h1 {
                 font-size: 20px;
+            }
+
+            .img-fluid {
+                width: 800px;
+                /* Set a fixed width */
+                height: 180px;
+                /* Set a fixed height */
+                border-radius: 12px;
+                object-fit: cover;
+                /* Ensure the image is scaled to fit the container */
+                margin: 0 auto;
+                /* Center the image horizontally */
             }
 
             h2 {
@@ -478,7 +540,7 @@
 
             <div class="col-lg-4">
                 <div class="recommendation-section">
-                    <h5 class="section-title">Baca Juga Artikel Lainnya</h5>
+                    <h5 class="section-title">Also read other articles</h5>
                     <!-- Card 1 -->
                     <?php foreach ($artikelTerkait as $artikel): ?>
                         <a href="<?= base_url('artikel/' . $artikel['id_artikel']); ?>"

@@ -200,6 +200,10 @@
         .card:hover {
             background-color: #009EF2;
             color: #ffffff;
+            transform: scale(1.05);
+            /* Membuat card membesar sedikit saat hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            /* Menambahkan bayangan */
         }
 
         .card:hover .card-title,
