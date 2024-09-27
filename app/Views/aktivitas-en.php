@@ -9,7 +9,7 @@
     <meta name="title" content="SonicPulse Activities: Latest Events and Engagements">
     <meta name="description"
         content="Stay updated with the latest activities from SonicPulse. Get information about our events and engagements.">
-    <title>SonicPulse Activities: Latest Events and Engagements</title>
+    <title>SonicPulse Activities | Latest Events and Engagements</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
@@ -440,22 +440,22 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('home'); ?>">Home</a>
+                        <a class="nav-link" href="<?= base_url('/en/home'); ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('about'); ?>">About</a>
+                        <a class="nav-link" href="<?= base_url('/en/about'); ?>">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('article'); ?>">Article</a>
+                        <a class="nav-link" href="<?= base_url('/en/article'); ?>">Article</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('product'); ?>">Product</a>
+                        <a class="nav-link" href="<?= base_url('/en/product'); ?>">Product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('activity'); ?>">Activity</a>
+                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('/en/activity'); ?>">Activity</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('contact'); ?>">Contact</a>
+                        <a class="nav-link" href="<?= base_url('/en/contact'); ?>">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -463,7 +463,7 @@
                             Language
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="aktivitas">Indonesia</a></li>
+                            <li><a class="dropdown-item" href="/id/aktivitas">Indonesia</a></li>
                             <li><a class="dropdown-item" href="#">English</a></li>
                         </ul>
                     </li>
@@ -483,7 +483,7 @@
             <div class="row">
                 <?php foreach ($aktivitass as $aktiv): ?>
                     <div class="col-md-4">
-                        <a href="<?= base_url('activity/' . $aktiv['id_aktivitas']); ?>"
+                        <a href="<?= base_url('/en/activity/' . $aktiv['id_aktivitas']); ?>"
                             style="text-decoration: none; color: inherit;">
                             <div class="card">
                                 <img src="<?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top"

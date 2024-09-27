@@ -9,7 +9,7 @@
     <meta name="title" content="SonicPulse: Welcome to the World of Quality Audio">
     <meta name="description"
         content="Discover the best audio experience with SonicPulse. Enjoy a range of high-quality audio products designed to satisfy your ears.">
-    <title>SonicPulse: Welcome to the World of Quality Audio</title>
+    <title>SonicPulse | Welcome to the World of Quality Audio</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
@@ -154,7 +154,9 @@
 
         .tentang-kami {
             width: 100%;
-            height: 650px;
+            height: auto;
+            /* Ubah agar tinggi mengikuti konten */
+            padding-bottom: 50px;
         }
 
         .tentang-kami h1 {
@@ -186,19 +188,18 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: normal;
-            /* Memungkinkan teks membungkus */
-            text-align: justify;
         }
 
         .tentang-kami img {
             width: 80%;
             border-radius: 8px;
-            margin-left: 70px;
         }
 
         .stacked-images-container {
             display: flex;
-            position: relative;
+            justify-content: center;
+            /* Posisikan gambar di tengah */
+            align-items: center;
             width: 100%;
         }
 
@@ -211,13 +212,14 @@
             border: 2px solid #009EF2;
             border-radius: 18px;
             text-decoration: none;
-
+            transition: all 0.3s ease;
         }
 
         .baca-selengkapnya:hover {
             background-color: #009EF2;
             color: #ffffff;
         }
+
 
         .produk-kami {
             padding: 60px 0;
@@ -421,11 +423,6 @@
                 height: 220px;
             }
 
-            .icon-circle {
-                width: 80px;
-                height: 80px;
-            }
-
             .kontak-kami {
                 padding: 50px 0;
             }
@@ -469,13 +466,19 @@
                 margin-bottom: 30px;
             }
 
-            .tentang-kami {
+            .tentang-kami img {
+                margin-bottom: 20px;
+                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                height: 820px;
+                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 16px;
+                margin-right: 0;
+                /* Hilangkan margin kanan */
+                margin-left: 0;
+                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -496,11 +499,6 @@
 
             .card img {
                 height: 280px;
-            }
-
-            .icon-circle {
-                width: 70px;
-                height: 70px;
             }
 
             .kontak-kami {
@@ -550,13 +548,19 @@
                 margin-bottom: 30px;
             }
 
-            .tentang-kami {
+            .tentang-kami img {
+                margin-bottom: 20px;
+                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                height: 760px;
+                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 14px;
+                margin-right: 0;
+                /* Hilangkan margin kanan */
+                margin-left: 0;
+                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -577,11 +581,6 @@
 
             .card img {
                 height: 240px;
-            }
-
-            .icon-circle {
-                width: 60px;
-                height: 60px;
             }
 
             .kontak-kami {
@@ -631,13 +630,19 @@
                 margin-bottom: 30px;
             }
 
-            .tentang-kami {
+            .tentang-kami img {
+                margin-bottom: 20px;
+                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                height: 720px;
+                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 12px;
+                margin-right: 0;
+                /* Hilangkan margin kanan */
+                margin-left: 0;
+                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -658,11 +663,6 @@
 
             .card img {
                 height: 200px;
-            }
-
-            .icon-circle {
-                width: 50px;
-                height: 50px;
             }
 
             .kontak-kami {
@@ -700,7 +700,7 @@
         <div class="container-fluid">
             <?php foreach ($profils as $logo): ?>
                 <a class="navbar-brand" href="#">
-                    <img src="<?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo SonicPulse" class="logo"
+                    <img src=" <?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo SonicPulse" class="logo"
                         loading="lazy">
                 </a>
             <?php endforeach; ?>
@@ -711,22 +711,22 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('home'); ?>">Home</a>
+                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('/en/home'); ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('about'); ?>">About</a>
+                        <a class="nav-link" href="<?= base_url('/en/about'); ?>">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('article'); ?>">Article</a>
+                        <a class="nav-link" href="<?= base_url('/en/article'); ?>">Article</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('product'); ?>">Product</a>
+                        <a class="nav-link" href="<?= base_url('/en/product'); ?>">Product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('activity'); ?>">Activity</a>
+                        <a class="nav-link" href="<?= base_url('/en/activity'); ?>">Activity</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('contact'); ?>">Contact</a>
+                        <a class="nav-link" href="<?= base_url('/en/contact'); ?>">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -734,7 +734,7 @@
                             Language
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/">Indonesian</a></li>
+                            <li><a class="dropdown-item" href="/id">Indonesian</a></li>
                             <li><a class="dropdown-item" href="#">English</a></li>
                         </ul>
                     </li>
@@ -749,13 +749,13 @@
             <?php if (!empty($sliders)): ?>
                 <?php foreach ($sliders as $key => $slider): ?>
                     <div class="carousel-item <?= $key === 0 ? 'active' : '' ?>">
-                        <img src="<?= base_url('IMG/' . $slider['file_foto_slider']); ?>" class="d-block w-100"
-                            alt="Slide <?= $key + 1 ?>" loading="lazy">
+                        <img src="<?= base_url('IMG/' . $slider['file_foto_slider']); ?>" class="d-block w-100" alt="Slide
+            <?= $key + 1 ?>" loading="lazy">
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
                 <div class="carousel-item active">
-                    <img src="<?= base_url('IMG/default.jpg'); ?>" class="d-block w-100" alt="Default Slide Corousel"
+                    <img src=" <?= base_url('IMG/default.jpg'); ?>" class="d-block w-100" alt="Default Slide Corousel"
                         loading="lazy">
                 </div>
             <?php endif; ?>
@@ -774,7 +774,7 @@
     <!-- Logo -->
     <?php foreach ($profils as $logo): ?>
         <div class="logo-sonic">
-            <img src="<?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo SonicPulse" class="image-logo"
+            <img src=" <?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo SonicPulse" class="image-logo"
                 loading="lazy">
         </div>
     <?php endforeach; ?>
@@ -784,25 +784,30 @@
     <div class="container-fluid tentang-kami" style="background-color: #F5FAFF;">
         <?php foreach ($profils as $about): ?>
             <h1 class="text-center mt-5 pt-5">About Us</h1>
-            <div class="row align-items-center">
-                <div class="col-md-6">
+            <div class="row align-items-center mt-4">
+                <div class="col-md-6 d-flex justify-content-center">
                     <div class="stacked-images-container">
-                        <img src="<?= base_url('IMG/' . $about['foto_utama']); ?>" alt="Image Utama Tentang Kami"
+                        <img src=" <?= base_url('IMG/' . $about['foto_utama']); ?>" alt="Image Utama Tentang Kami"
                             class="img-fluid first" loading="lazy">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="headline">
-                        <p><?= $about['nama_perusahaan']; ?></p>
+                        <p>
+                            <?= $about['nama_perusahaan']; ?>
+                        </p>
                     </div>
-                    <p><?= $about['deskripsi_perusahaan_en']; ?></p>
+                    <p>
+                        <?= $about['deskripsi_perusahaan_en']; ?>
+                    </p>
                     <div class="text">
-                        <a href="about" class="btn baca-selengkapnya">Read more</a>
+                        <a href="/en/about" class="btn baca-selengkapnya">Read more</a>
                     </div>
                 </div>
             </div>
         <?php endforeach; ?>
     </div>
+
 
     <!-- Produk Kami -->
     <div class="container-fluid produk-kami" ;>
@@ -810,12 +815,15 @@
         <div class="cards-container">
 
             <?php foreach ($produks as $p): ?>
-                <a href="<?= base_url('product/' . $p['id_produk']); ?>" style="text-decoration: none; color: #009EF2;">
+                <a href="<?= base_url('/en/product/' . $p['id_produk']); ?>" style="text-decoration: none; color:
+                        #009EF2;">
                     <div class="card">
-                        <img src="<?= base_url('IMG/' . $p['foto_produk']); ?>" class="card-img-top"
+                        <img src=" <?= base_url('IMG/' . $p['foto_produk']); ?>" class="card-img-top"
                             alt="Image Product SonicPulse" loading="lazy">
                         <div class="card-body">
-                            <h4 class="card-title"><?= $p['nama_produk_en']; ?></h4>
+                            <h4 class="card-title">
+                                <?= $p['nama_produk_en']; ?>
+                            </h4>
                         </div>
                     </div>
                 </a>
@@ -829,14 +837,16 @@
         <div class="cards-container">
 
             <?php foreach ($aktivitass as $aktiv): ?>
-                <a href="<?= base_url('activity/' . $aktiv['id_aktivitas']); ?>"
+                <a href="<?= base_url('/en/activity/' . $aktiv['id_aktivitas']); ?>"
                     style="text-decoration: none; color: inherit;">
                     <div class="card">
-                        <img src="<?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top"
+                        <img src=" <?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top"
                             alt="Image Aktivity SonicPulse" loading="lazy">
                         <div class="card-body">
                             <h4 class="card-title"><?= $aktiv['nama_aktivitas_en']; ?></h4>
-                            <p class="card-text"><?= $aktiv['deskripsi_aktivitas_en']; ?></p>
+                            <p class=" card-text">
+                                <?= $aktiv['deskripsi_aktivitas_en']; ?>
+                            </p>
                         </div>
                     </div>
                 </a>
@@ -867,8 +877,8 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="no_hp">Telephone:</label>
-                            <input type="tel" id="no_hp" value="<?= $p['no_hp']; ?>" readonly class="form-control">
+                            <label for="no_hp">Telephone:</label> <input type="tel" id="no_hp" value="<?= $p['no_hp']; ?>"
+                                readonly class="form-control">
                         </div>
                     </div>
 
@@ -886,7 +896,8 @@
     <!-- Footer -->
     <?php foreach ($profils as $footer): ?>
         <footer>
-            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
+            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy;
+                <?= date('Y'); ?> Copyright:
                 <?= $p['teks_footer']; ?>
         </footer>
     <?php endforeach; ?>

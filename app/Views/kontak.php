@@ -9,7 +9,7 @@
     <meta name="title" content="Kontak SonicPulse: Hubungi Kami">
     <meta name="description"
         content="Jika Anda memiliki pertanyaan atau ingin berkolaborasi, hubungi tim SonicPulse melalui informasi kontak berikut.">
-    <title>Kontak SonicPulse: Hubungi Kami</title>
+    <title>Kontak SonicPulse | Hubungi Kami</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
@@ -383,22 +383,22 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/'); ?>">Beranda</a>
+                        <a class="nav-link" href="<?= base_url('/id'); ?>">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('tentang'); ?>">Tentang</a>
+                        <a class="nav-link" href="<?= base_url('/id/tentang'); ?>">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('artikel'); ?>">Artikel</a>
+                        <a class="nav-link" href="<?= base_url('/id/artikel'); ?>">Artikel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('produk'); ?>">Produk</a>
+                        <a class="nav-link" href="<?= base_url('/id/produk'); ?>">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('aktivitas'); ?>">Aktivitas</a>
+                        <a class="nav-link" href="<?= base_url('/id/aktivitas'); ?>">Aktivitas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('kontak'); ?>">Kontak</a>
+                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('/id/kontak'); ?>">Kontak</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -407,7 +407,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="contact">English</a></li>
+                            <li><a class="dropdown-item" href="/en/contact">English</a></li>
                         </ul>
                     </li>
                 </ul>

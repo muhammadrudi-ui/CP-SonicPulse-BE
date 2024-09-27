@@ -9,7 +9,7 @@
     <meta name="title" content="Produk SonicPulse: Audio Berkualitas untuk Semua">
     <meta name="description"
         content="Jelajahi koleksi produk audio SonicPulse yang berkualitas tinggi dan temukan solusi audio yang sempurna untuk Anda.">
-    <title>Produk SonicPulse: Audio Berkualitas untuk Semua</title>
+    <title>Produk SonicPulse | Audio Berkualitas untuk Semua</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
@@ -373,22 +373,22 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/'); ?>">Beranda</a>
+                        <a class="nav-link" href="<?= base_url('/id'); ?>">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('tentang'); ?>">Tentang</a>
+                        <a class="nav-link" href="<?= base_url('/id/tentang'); ?>">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('artikel'); ?>">Artikel</a>
+                        <a class="nav-link" href="<?= base_url('/id/artikel'); ?>">Artikel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('produk'); ?>">Produk</a>
+                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('/id/produk'); ?>">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('aktivitas'); ?>">Aktivitas</a>
+                        <a class="nav-link" href="<?= base_url('/id/aktivitas'); ?>">Aktivitas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('kontak'); ?>">Kontak</a>
+                        <a class="nav-link" href="<?= base_url('/id/kontak'); ?>">Kontak</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -397,7 +397,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="product">English</a></li>
+                            <li><a class="dropdown-item" href="/en/product">English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -415,7 +415,8 @@
         <div class="row">
             <?php foreach ($produks as $p): ?>
                 <div class="col-md-4">
-                    <a href="<?= base_url('produk/' . $p['id_produk']); ?>" style="text-decoration: none; color: #009EF2;">
+                    <a href="<?= base_url('/id/produk/' . $p['id_produk']); ?>"
+                        style="text-decoration: none; color: #009EF2;">
                         <div class="card">
                             <img src="<?= base_url('IMG/' . $p['foto_produk']); ?>" class="card-img-top"
                                 alt="<?= $p['nama_produk_in']; ?>" loading="lazy">

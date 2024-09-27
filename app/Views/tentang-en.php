@@ -8,7 +8,7 @@
     <!-- Meta Tags -->
     <meta name="title" content="About SonicPulse: Contact Us for Inquiries and Assistance">
     <meta name="description" content="Please contact us for more information or support you may need.">
-    <title>About SonicPulse: Contact Us for Inquiries and Assistance</title>
+    <title>About SonicPulse | Contact Us for Inquiries and Assistance</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
@@ -367,22 +367,22 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('home'); ?>">Home</a>
+                        <a class="nav-link" href="<?= base_url('/en/home'); ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('about'); ?>">About</a>
+                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('/en/about'); ?>">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('article'); ?>">Article</a>
+                        <a class="nav-link" href="<?= base_url('/en/article'); ?>">Article</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('product'); ?>">Product</a>
+                        <a class="nav-link" href="<?= base_url('/en/product'); ?>">Product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('activity'); ?>">Activity</a>
+                        <a class="nav-link" href="<?= base_url('/en/activity'); ?>">Activity</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('contact'); ?>">Contact</a>
+                        <a class="nav-link" href="<?= base_url('/en/contact'); ?>">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -390,7 +390,7 @@
                             Language
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="tentang">Indonesian</a></li>
+                            <li><a class="dropdown-item" href="/id/tentang">Indonesian</a></li>
                             <li><a class="dropdown-item" href="#">English</a></li>
                         </ul>
                     </li>

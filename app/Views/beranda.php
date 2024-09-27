@@ -9,7 +9,7 @@
     <meta name="title" content="SonicPulse: Selamat Datang di Dunia Audio Berkualitas">
     <meta name="description"
         content="Temukan pengalaman audio terbaik dengan SonicPulse. Nikmati berbagai produk audio berkualitas tinggi yang dirancang untuk memuaskan telinga Anda.">
-    <title>SonicPulse: Selamat Datang di Dunia Audio Berkualitas</title>
+    <title>SonicPulse | Selamat Datang di Dunia Audio Berkualitas</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
@@ -154,7 +154,9 @@
 
         .tentang-kami {
             width: 100%;
-            height: 650px;
+            height: auto;
+            /* Ubah agar tinggi mengikuti konten */
+            padding-bottom: 50px;
         }
 
         .tentang-kami h1 {
@@ -186,19 +188,18 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: normal;
-            /* Memungkinkan teks membungkus */
-            text-align: justify;
         }
 
         .tentang-kami img {
             width: 80%;
             border-radius: 8px;
-            margin-left: 70px;
         }
 
         .stacked-images-container {
             display: flex;
-            position: relative;
+            justify-content: center;
+            /* Posisikan gambar di tengah */
+            align-items: center;
             width: 100%;
         }
 
@@ -211,13 +212,14 @@
             border: 2px solid #009EF2;
             border-radius: 18px;
             text-decoration: none;
-
+            transition: all 0.3s ease;
         }
 
         .baca-selengkapnya:hover {
             background-color: #009EF2;
             color: #ffffff;
         }
+
 
         .produk-kami {
             padding: 60px 0;
@@ -421,11 +423,6 @@
                 height: 220px;
             }
 
-            .icon-circle {
-                width: 80px;
-                height: 80px;
-            }
-
             .kontak-kami {
                 padding: 50px 0;
             }
@@ -469,13 +466,19 @@
                 margin-bottom: 30px;
             }
 
-            .tentang-kami {
+            .tentang-kami img {
+                margin-bottom: 20px;
+                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                height: 820px;
+                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 16px;
+                margin-right: 0;
+                /* Hilangkan margin kanan */
+                margin-left: 0;
+                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -496,11 +499,6 @@
 
             .card img {
                 height: 280px;
-            }
-
-            .icon-circle {
-                width: 70px;
-                height: 70px;
             }
 
             .kontak-kami {
@@ -550,13 +548,19 @@
                 margin-bottom: 30px;
             }
 
-            .tentang-kami {
+            .tentang-kami img {
+                margin-bottom: 20px;
+                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                height: 760px;
+                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 14px;
+                margin-right: 0;
+                /* Hilangkan margin kanan */
+                margin-left: 0;
+                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -577,11 +581,6 @@
 
             .card img {
                 height: 240px;
-            }
-
-            .icon-circle {
-                width: 60px;
-                height: 60px;
             }
 
             .kontak-kami {
@@ -631,13 +630,19 @@
                 margin-bottom: 30px;
             }
 
-            .tentang-kami {
+            .tentang-kami img {
+                margin-bottom: 20px;
+                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                height: 720px;
+                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 12px;
+                margin-right: 0;
+                /* Hilangkan margin kanan */
+                margin-left: 0;
+                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -658,11 +663,6 @@
 
             .card img {
                 height: 200px;
-            }
-
-            .icon-circle {
-                width: 50px;
-                height: 50px;
             }
 
             .kontak-kami {
@@ -711,22 +711,22 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('/'); ?>">Beranda</a>
+                        <a class="nav-link" style="color: #009EF2;" href="<?= base_url('/id'); ?>">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('tentang'); ?>">Tentang</a>
+                        <a class="nav-link" href="<?= base_url('/id/tentang'); ?>">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('artikel'); ?>">Artikel</a>
+                        <a class="nav-link" href="<?= base_url('/id/artikel'); ?>">Artikel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('produk'); ?>">Produk</a>
+                        <a class="nav-link" href="<?= base_url('/id/produk'); ?>">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('aktivitas'); ?>">Aktivitas</a>
+                        <a class="nav-link" href="<?= base_url('/id/aktivitas'); ?>">Aktivitas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('kontak'); ?>">Kontak</a>
+                        <a class="nav-link" href="<?= base_url('/id/kontak'); ?>">Kontak</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -735,7 +735,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="home">English</a></li>
+                            <li><a class="dropdown-item" href="/en/home">English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -784,20 +784,24 @@
     <div class="container-fluid tentang-kami" style="background-color: #F5FAFF;">
         <?php foreach ($profils as $about): ?>
             <h1 class="text-center mt-5 pt-5">Tentang Kami</h1>
-            <div class="row align-items-center">
-                <div class="col-md-6">
+            <div class="row align-items-center mt-4">
+                <div class="col-md-6 d-flex justify-content-center">
                     <div class="stacked-images-container">
-                        <img src="<?= base_url('IMG/' . $about['foto_utama']); ?>" alt="Image Utama Tentang Kami"
+                        <img src=" <?= base_url('IMG/' . $about['foto_utama']); ?>" alt="Image Utama Tentang Kami"
                             class="img-fluid first" loading="lazy">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="headline">
-                        <p><?= $about['nama_perusahaan']; ?></p>
+                        <p>
+                            <?= $about['nama_perusahaan']; ?>
+                        </p>
                     </div>
-                    <p><?= $about['deskripsi_perusahaan_in']; ?></p>
+                    <p>
+                        <?= $about['deskripsi_perusahaan_in']; ?>
+                    </p>
                     <div class="text">
-                        <a href="tentang" class="btn baca-selengkapnya">Baca Selengkapnya</a>
+                        <a href="/id/tentang" class="btn baca-selengkapnya">Baca Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -810,7 +814,7 @@
         <div class="cards-container">
 
             <?php foreach ($produks as $p): ?>
-                <a href="<?= base_url('produk/' . $p['id_produk']); ?>" style="text-decoration: none; color: #009EF2;">
+                <a href="<?= base_url('/id/produk/' . $p['id_produk']); ?>" style="text-decoration: none; color: #009EF2;">
                     <div class="card">
                         <img src="<?= base_url('IMG/' . $p['foto_produk']); ?>" class="card-img-top"
                             alt="Image Produk SonicPulse" loading="lazy">
@@ -829,7 +833,7 @@
         <div class="cards-container">
 
             <?php foreach ($aktivitass as $aktiv): ?>
-                <a href="<?= base_url('aktivitas/' . $aktiv['id_aktivitas']); ?>"
+                <a href="<?= base_url('/id/aktivitas/' . $aktiv['id_aktivitas']); ?>"
                     style="text-decoration: none; color: inherit;">
                     <div class="card">
                         <img src="<?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top"
