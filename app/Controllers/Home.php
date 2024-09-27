@@ -214,7 +214,7 @@ class Home extends BaseController
     {
         $profil = new Profil();
         $data['profils'] = $profil->findAll(3);
-        return view('kontak', $data);
+        return view('kontak-en', $data);
     }
 
 }
