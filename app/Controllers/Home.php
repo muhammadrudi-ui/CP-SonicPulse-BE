@@ -58,8 +58,18 @@ class Home extends BaseController
         $artikel = new Artikel();
         $profil = new Profil();
 
-        $data['artikels'] = $artikel->findAll();
+        // Ambil semua produk dari database
+        $items = $artikel->findAll();
+
+        // Loop melalui data produk yang diambil
+        foreach ($items as &$item) {
+            $item['slug'] = url_title($item['judul_artikel'], '-', true);
+        }
+
+        // Simpan data yang sudah dimodifikasi kembali ke variabel $data
+        $data['artikels'] = $items;
         $data['profils'] = $profil->findAll();
+
         return view('artikel', $data);
     }
 
@@ -68,37 +78,75 @@ class Home extends BaseController
         $artikel = new Artikel();
         $profil = new Profil();
 
-        $data['artikels'] = $artikel->findAll();
+        // Ambil semua produk dari database
+        $items = $artikel->findAll();
+
+        // Loop melalui data produk yang diambil
+        foreach ($items as &$item) {
+            $item['slug'] = url_title($item['judul_artikel'], '-', true);
+        }
+
+        // Simpan data yang sudah dimodifikasi kembali ke variabel $data
+        $data['artikels'] = $items;
         $data['profils'] = $profil->findAll();
+
         return view('artikel-en', $data);
     }
 
-    public function detail_artikel($id)
+    public function detail_artikel($slug)
     {
         $artikel = new Artikel();
         $profil = new Profil();
 
-        // Ambil data produk berdasarkan ID
-        $data['artikel'] = $artikel->find($id);
+        // Ambil semua profil untuk ditampilkan
         $data['profils'] = $profil->findAll();
+        $items = $artikel->findAll();
+
+        // Cari produk berdasarkan slug
+        $data['artikel'] = null;
+        foreach ($items as $item) {
+            if (url_title($item['judul_artikel'], '-', true) === $slug) {
+                $data['artikel'] = $item;
+                break;
+            }
+        }
+
+        // Jika produk tidak ditemukan, redirect ke halaman produk
+        if (!$data['artikel']) {
+            return redirect()->to('/id/artikel');
+        }
 
         // Ambil 3 produk lain yang tidak memiliki ID yang sama (produk terkait)
-        $data['artikelTerkait'] = $artikel->where('id_artikel !=', $id)->limit(3)->findAll();
+        $data['artikelTerkait'] = $artikel->where('id_artikel !=', $slug)->limit(3)->findAll();
 
         return view('detail-artikel', $data);
     }
 
-    public function detail_article($id)
+    public function detail_article($slug)
     {
         $artikel = new Artikel();
         $profil = new Profil();
 
-        // Ambil data produk berdasarkan ID
-        $data['artikel'] = $artikel->find($id);
+        // Ambil semua profil untuk ditampilkan
         $data['profils'] = $profil->findAll();
+        $items = $artikel->findAll();
+
+        // Cari produk berdasarkan slug
+        $data['artikel'] = null;
+        foreach ($items as $item) {
+            if (url_title($item['judul_artikel'], '-', true) === $slug) {
+                $data['artikel'] = $item;
+                break;
+            }
+        }
+
+        // Jika produk tidak ditemukan, redirect ke halaman produk
+        if (!$data['artikel']) {
+            return redirect()->to('/id/artikel');
+        }
 
         // Ambil 3 produk lain yang tidak memiliki ID yang sama (produk terkait)
-        $data['artikelTerkait'] = $artikel->where('id_artikel !=', $id)->limit(3)->findAll();
+        $data['artikelTerkait'] = $artikel->where('id_artikel !=', $slug)->limit(3)->findAll();
 
         return view('detail-artikel-en', $data);
     }
@@ -208,8 +256,18 @@ class Home extends BaseController
         $aktivitas = new Aktivitas();
         $profil = new Profil();
 
-        $data['aktivitass'] = $aktivitas->findAll();
+        // Ambil semua produk dari database
+        $items = $aktivitas->findAll();
+
+        // Loop melalui data produk yang diambil
+        foreach ($items as &$item) {
+            $item['slug'] = url_title($item['nama_aktivitas_in'], '-', true);
+        }
+
+        // Simpan data yang sudah dimodifikasi kembali ke variabel $data
+        $data['aktivitass'] = $items;
         $data['profils'] = $profil->findAll();
+
         return view('aktivitas', $data);
     }
 
@@ -218,37 +276,75 @@ class Home extends BaseController
         $aktivitas = new Aktivitas();
         $profil = new Profil();
 
-        $data['aktivitass'] = $aktivitas->findAll();
+        // Ambil semua produk dari database
+        $items = $aktivitas->findAll();
+
+        // Loop melalui data produk yang diambil
+        foreach ($items as &$item) {
+            $item['slug'] = url_title($item['nama_aktivitas_en'], '-', true);
+        }
+
+        // Simpan data yang sudah dimodifikasi kembali ke variabel $data
+        $data['aktivitass'] = $items;
         $data['profils'] = $profil->findAll();
+
         return view('aktivitas-en', $data);
     }
 
-    public function detail_aktivitas($id)
+    public function detail_aktivitas($slug)
     {
         $aktivitas = new Aktivitas();
         $profil = new Profil();
 
-        // Ambil data aktivitas berdasarkan ID
-        $data['aktivitas'] = $aktivitas->find($id);
+        // Ambil semua profil untuk ditampilkan
         $data['profils'] = $profil->findAll();
+        $items = $aktivitas->findAll();
 
+        // Cari produk berdasarkan slug
+        $data['aktivitas'] = null;
+        foreach ($items as $item) {
+            // Cek slug untuk nama produk dalam bahasa Inggris
+            if (url_title($item['nama_aktivitas_in'], '-', true) === $slug) {
+                $data['aktivitas'] = $item;
+                break;
+            }
+        }
+
+        // Jika produk tidak ditemukan, redirect ke halaman produk
+        if (!$data['aktivitas']) {
+            return redirect()->to('/id/aktivitas');
+        }
         // Ambil 3 aktivitas lain yang tidak memiliki ID yang sama (aktivitas terkait)
-        $data['aktivitasTerkait'] = $aktivitas->where('id_aktivitas !=', $id)->limit(3)->findAll();
+        $data['aktivitasTerkait'] = $aktivitas->where('id_aktivitas !=', $slug)->limit(3)->findAll();
 
         return view('detail-aktivitas', $data);
     }
 
-    public function detail_activity($id)
+    public function detail_activity($slug)
     {
         $aktivitas = new Aktivitas();
         $profil = new Profil();
 
-        // Ambil data aktivitas berdasarkan ID
-        $data['aktivitas'] = $aktivitas->find($id);
+        // Ambil semua profil untuk ditampilkan
         $data['profils'] = $profil->findAll();
+        $items = $aktivitas->findAll();
 
+        // Cari produk berdasarkan slug
+        $data['aktivitas'] = null;
+        foreach ($items as $item) {
+            // Cek slug untuk nama produk dalam bahasa Inggris
+            if (url_title($item['nama_aktivitas_en'], '-', true) === $slug) {
+                $data['aktivitas'] = $item;
+                break;
+            }
+        }
+
+        // Jika produk tidak ditemukan, redirect ke halaman produk
+        if (!$data['aktivitas']) {
+            return redirect()->to('/en/aktivitas');
+        }
         // Ambil 3 aktivitas lain yang tidak memiliki ID yang sama (aktivitas terkait)
-        $data['aktivitasTerkait'] = $aktivitas->where('id_aktivitas !=', $id)->limit(3)->findAll();
+        $data['aktivitasTerkait'] = $aktivitas->where('id_aktivitas !=', $slug)->limit(3)->findAll();
 
         return view('detail-aktivitas-en', $data);
     }

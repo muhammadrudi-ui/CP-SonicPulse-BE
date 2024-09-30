@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Meta Tags -->
-    <meta name="title" content="Detail Artikel SonicPulse: Insight dan Informasi">
+    <meta name="title" content="<?= isset($artikel['judul_artikel']) ? $artikel['judul_artikel'] : 'Detail Artikel' ?>">
     <meta name="description"
         content="Dapatkan wawasan dan informasi mendalam tentang audio melalui artikel kami yang terbaru dan paling relevan.">
-    <title>Detail Artikel SonicPulse | Insight dan Informasi</title>
+    <title>
+        <?= isset($artikel['judul_artikel']) ? $artikel['judul_artikel'] . ' | SonicPulse' : 'Detail Artikel | SonicPulse' ?>
+    </title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
@@ -507,7 +509,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="/en/article/<?= $artikel['id_artikel'] ?>">English</a>
+                            <li><a class="dropdown-item"
+                                    href="/en/article/<?= url_title($artikel['judul_artikel'], '-', true); ?>">English</a>
                             </li>
                         </ul>
                     </li>
@@ -542,9 +545,9 @@
             <div class="col-lg-4">
                 <div class="recommendation-section">
                     <h5 class="section-title">Baca Juga Artikel Lainnya</h5>
-                    <!-- Card 1 -->
+                    <!-- Card -->
                     <?php foreach ($artikelTerkait as $artikel): ?>
-                        <a href="<?= base_url('/id/artikel/' . $artikel['id_artikel']); ?>"
+                        <a href="<?= base_url('/id/artikel/' . url_title($artikel['judul_artikel'], '-', true)); ?>"
                             style="text-decoration: none; color: inherit;">
                             <div class="recommendation-card">
                                 <img src="<?= base_url('IMG/' . $artikel['foto_artikel']); ?>" alt="Image-Artikel-Lainnya"

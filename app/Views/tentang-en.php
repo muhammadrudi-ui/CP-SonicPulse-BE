@@ -390,7 +390,7 @@
                             Language
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/id/tentang">Indonesian</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/id/tentang'); ?>">Indonesia</a></li>
                             <li><a class="dropdown-item" href="#">English</a></li>
                         </ul>
                     </li>

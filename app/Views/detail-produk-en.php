@@ -474,7 +474,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item"
-                                    href="/id/produk/<?= url_title($produk['nama_produk_in'], '-', true); ?>">Indonesian</a>
+                                    href="/id/produk/<?= url_title($produk['nama_produk_in'], '-', true); ?>">Indonesia</a>
                             </li>
                             <li><a class="dropdown-item" href="#">English</a></li>
                         </ul>

@@ -463,7 +463,7 @@
                             Language
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/id/aktivitas">Indonesia</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/id/aktivitas'); ?>">Indonesia</a></li>
                             <li><a class="dropdown-item" href="#">English</a></li>
                         </ul>
                     </li>
@@ -483,7 +483,7 @@
             <div class="row">
                 <?php foreach ($aktivitass as $aktiv): ?>
                     <div class="col-md-4">
-                        <a href="<?= base_url('/en/activity/' . $aktiv['id_aktivitas']); ?>"
+                        <a href="<?= base_url('/en/activity/' . $aktiv['slug']); ?>"
                             style="text-decoration: none; color: inherit;">
                             <div class="card">
                                 <img src="<?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top"

@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Meta Tags -->
-    <meta name="title" content="SonicPulse Activity Details: Latest Engagements">
+    <meta name="title"
+        content="<?= isset($aktivitas['nama_aktivitas_en']) ? $aktivitas['nama_aktivitas_en'] : 'Activity Details' ?>">
     <meta name="description" content="Learn more about the latest activities organized by SonicPulse.">
-    <title>SonicPulse Activity Details | Latest Engagements</title>
+    <title>
+        <?= isset($aktivitas['nama_aktivitas_en']) ? $aktivitas['nama_aktivitas_en'] . ' | SonicPulse' : 'Activity Details | SonicPulse' ?>
+    </title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
@@ -508,7 +511,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item"
-                                    href="/id/aktivitas/<?= $aktivitas['id_aktivitas'] ?>">Indonesia</a></li>
+                                    href="/id/aktivitas/<?= url_title($aktivitas['nama_aktivitas_in'], '-', true); ?>">Indonesia</a>
+                            </li>
                             <li><a class="dropdown-item" href="#">English</a></li>
                         </ul>
                     </li>
@@ -551,7 +555,7 @@
 
             <?php foreach ($aktivitasTerkait as $aktivitas): ?>
                 <div class="col-md-4">
-                    <a href="<?= base_url('/en/activity/' . $aktivitas['id_aktivitas']); ?>"
+                    <a href="<?= base_url('/en/activity/' . url_title($aktivitas['nama_aktivitas_en'], '-', true)); ?>"
                         style="text-decoration: none; color: inherit;">
                         <div class="card">
                             <img src="<?= base_url('IMG/' . $aktivitas['foto_aktivitas']); ?>" class="card-img-top"

@@ -406,7 +406,7 @@
                             Language
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/id/kontak">Indonesian</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/id/kontak'); ?>">Indonesia</a></li>
                             <li><a class="dropdown-item" href="#">English</a></li>
                         </ul>
                     </li>

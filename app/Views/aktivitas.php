@@ -465,7 +465,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="/en/activity">English</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/en/activity'); ?>">English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -484,7 +484,7 @@
             <div class="row">
                 <?php foreach ($aktivitass as $aktiv): ?>
                     <div class="col-md-4">
-                        <a href="<?= base_url('/id/aktivitas/' . $aktiv['id_aktivitas']); ?>"
+                        <a href="<?= base_url('/id/aktivitas/' . $aktiv['slug']); ?>"
                             style="text-decoration: none; color: inherit;">
                             <div class="card">
                                 <img src="<?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top"

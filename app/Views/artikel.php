@@ -545,7 +545,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="/en/article">English</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/en/article'); ?>">English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -573,7 +573,7 @@
                                 <span class="text" style="font-size: 12px;">
                                     <?= date('Y-m-d', strtotime($ar['created_at'])); ?>
                                 </span>
-                                <a href="<?= base_url('/id/artikel/' . $ar['id_artikel']); ?>" class="btn btn-primary">Baca
+                                <a href="<?= base_url('/id/artikel/' . $ar['slug']); ?>" class="btn btn-primary">Baca
                                     Selengkapnya</a>
                             </div>
                         </div>

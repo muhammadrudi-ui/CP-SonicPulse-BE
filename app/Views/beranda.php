@@ -735,7 +735,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="/en/home">English</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/en/home'); ?>">English</a></li>
                         </ul>
                     </li>
                 </ul>
