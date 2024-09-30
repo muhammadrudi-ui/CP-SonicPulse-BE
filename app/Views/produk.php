@@ -415,8 +415,7 @@
         <div class="row">
             <?php foreach ($produks as $p): ?>
                 <div class="col-md-4">
-                    <a href="<?= base_url('/id/produk/' . $p['id_produk']); ?>"
-                        style="text-decoration: none; color: #009EF2;">
+                    <a href="<?= base_url('/id/produk/' . $p['slug']); ?>" style="text-decoration: none; color: #009EF2;">
                         <div class="card">
                             <img src="<?= base_url('IMG/' . $p['foto_produk']); ?>" class="card-img-top"
                                 alt="<?= $p['nama_produk_in']; ?>" loading="lazy">

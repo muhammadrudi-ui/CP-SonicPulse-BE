@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Meta Tags -->
-    <meta name="title" content="SonicPulse Product Details: Find Your Ideal Audio">
+    <meta name="title" content="<?= isset($produk['nama_produk_en']) ? $produk['nama_produk_en'] : 'Product Detail' ?>">
     <meta name="description"
         content="Explore SonicPulse product details and find the ideal audio that suits your needs.">
-    <title>SonicPulse Product Details | Find Your Ideal Audio</title>
+    <title>
+        <?= isset($produk['nama_produk_en']) ? $produk['nama_produk_en'] . ' | SonicPulse' : 'Product Detail | SonicPulse' ?>
+    </title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
@@ -471,7 +473,8 @@
                             Language
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/id/produk/<?= $produk['id_produk'] ?>">Indonesian</a>
+                            <li><a class="dropdown-item"
+                                    href="/id/produk/<?= url_title($produk['nama_produk_in'], '-', true); ?>">Indonesian</a>
                             </li>
                             <li><a class="dropdown-item" href="#">English</a></li>
                         </ul>
@@ -517,7 +520,7 @@
             <?php foreach ($produkTerkait as $produk): ?>
                 <!-- Card Produk Terkait -->
                 <div class="col-md-4">
-                    <a href="<?= base_url('/en/product/' . $produk['id_produk']); ?>"
+                    <a href="<?= base_url('/en/product/' . url_title($produk['nama_produk_en'], '-', true)); ?>"
                         style="text-decoration: none; color: #009EF2;">
                         <div class="card">
                             <img src="<?= base_url('IMG/' . $produk['foto_produk']); ?>" class="card-img-top" alt="..."

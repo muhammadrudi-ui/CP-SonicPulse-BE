@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Meta Tags -->
-    <meta name="title" content="Detail Produk SonicPulse: Temukan Audio Ideal Anda">
+    <meta name="title" content="<?= isset($produk['nama_produk_in']) ? $produk['nama_produk_in'] : 'Detail Produk' ?>">
     <meta name="description"
         content="Jelajahi detail produk SonicPulse dan temukan audio ideal yang cocok untuk kebutuhan Anda.">
-    <title>Detail Produk SonicPulse | Temukan Audio Ideal Anda</title>
+    <title>
+        <?= isset($produk['nama_produk_in']) ? $produk['nama_produk_in'] . ' | SonicPulse' : 'Detail Produk SonicPulse' ?>
+    </title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
@@ -472,7 +474,9 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="/en/product/<?= $produk['id_produk'] ?>">English</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/en/product/<?= url_title($produk['nama_produk_en'], '-', true); ?>">English</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -515,15 +519,12 @@
 
     <!-- card Produk -->
     <div class="container mt-4 mb-5">
-        <div class="row"> <?php
-        // Debugging: Cek jumlah produk terkait
-        echo '<p>Jumlah produk terkait: ' . count($produkTerkait) . '</p>';
-        ?>
+        <div class="row">
 
             <?php foreach ($produkTerkait as $produk): ?>
                 <!-- Card Produk Terkait -->
                 <div class="col-md-4">
-                    <a href="<?= base_url('/id/produk/' . $produk['id_produk']); ?>"
+                    <a href="<?= base_url('/id/produk/' . url_title($produk['nama_produk_in'], '-', true)); ?>"
                         style="text-decoration: none; color: #009EF2;">
                         <div class="card">
                             <img src="<?= base_url('IMG/' . $produk['foto_produk']); ?>" class="card-img-top" alt="..."
