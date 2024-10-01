@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Meta Tags -->
-    <meta name="title" content="Produk SonicPulse: Audio Berkualitas untuk Semua">
+    <meta name="title" content="Produk | SonicPulse: Audio Berkualitas untuk Semua">
     <meta name="description"
         content="Jelajahi koleksi produk audio SonicPulse yang berkualitas tinggi dan temukan solusi audio yang sempurna untuk Anda.">
-    <title>Produk SonicPulse | Audio Berkualitas untuk Semua</title>
+    <title>Produk | SonicPulse: Audio Berkualitas untuk Semua</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">

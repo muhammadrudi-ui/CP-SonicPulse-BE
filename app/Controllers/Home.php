@@ -116,8 +116,13 @@ class Home extends BaseController
             return redirect()->to('/id/artikel');
         }
 
-        // Ambil 3 produk lain yang tidak memiliki ID yang sama (produk terkait)
-        $data['artikelTerkait'] = $artikel->where('id_artikel !=', $slug)->limit(3)->findAll();
+        // Ambil ID artikel yang sedang dibuka
+        $id_artikel = $data['artikel']['id_artikel'];
+
+        // Ambil 3 artikel lain yang tidak memiliki ID yang sama (artikel terkait)
+        $data['artikelTerkait'] = $artikel->where('id_artikel !=', $id_artikel)
+            ->limit(5)
+            ->find();
 
         return view('detail-artikel', $data);
     }
@@ -145,8 +150,13 @@ class Home extends BaseController
             return redirect()->to('/id/artikel');
         }
 
-        // Ambil 3 produk lain yang tidak memiliki ID yang sama (produk terkait)
-        $data['artikelTerkait'] = $artikel->where('id_artikel !=', $slug)->limit(3)->findAll();
+        // Ambil ID artikel yang sedang dibuka
+        $id_artikel = $data['artikel']['id_artikel'];
+
+        // Ambil 3 artikel lain yang tidak memiliki ID yang sama (artikel terkait)
+        $data['artikelTerkait'] = $artikel->where('id_artikel !=', $id_artikel)
+            ->limit(5)
+            ->find();
 
         return view('detail-artikel-en', $data);
     }
@@ -215,7 +225,9 @@ class Home extends BaseController
         }
 
         // Ambil 3 produk lain yang tidak memiliki ID yang sama (produk terkait)
-        $data['produkTerkait'] = $produk->where('id_produk !=', $data['produk']['id_produk'])->limit(3)->findAll();
+        $data['produkTerkait'] = $produk->where('id_produk !=', $data['produk']['id_produk'])
+            ->limit(3)
+            ->find();
 
         return view('detail-produk', $data);
     }
@@ -246,7 +258,9 @@ class Home extends BaseController
         }
 
         // Ambil 3 produk lain yang tidak memiliki ID yang sama (produk terkait)
-        $data['produkTerkait'] = $produk->where('id_produk !=', $data['produk']['id_produk'])->limit(3)->findAll();
+        $data['produkTerkait'] = $produk->where('id_produk !=', $data['produk']['id_produk'])
+            ->limit(3)
+            ->find();
 
         return view('detail-produk-en', $data);
     }
@@ -314,8 +328,14 @@ class Home extends BaseController
         if (!$data['aktivitas']) {
             return redirect()->to('/id/aktivitas');
         }
+
+        // Ambil ID aktivitas yang sedang ditampilkan
+        $id_aktivitas = $data['aktivitas']['id_aktivitas'];
+
         // Ambil 3 aktivitas lain yang tidak memiliki ID yang sama (aktivitas terkait)
-        $data['aktivitasTerkait'] = $aktivitas->where('id_aktivitas !=', $slug)->limit(3)->findAll();
+        $data['aktivitasTerkait'] = $aktivitas->where('id_aktivitas !=', $id_aktivitas)
+            ->limit(3)
+            ->find();
 
         return view('detail-aktivitas', $data);
     }
@@ -343,8 +363,14 @@ class Home extends BaseController
         if (!$data['aktivitas']) {
             return redirect()->to('/en/aktivitas');
         }
+
+        // Ambil ID aktivitas yang sedang ditampilkan
+        $id_aktivitas = $data['aktivitas']['id_aktivitas'];
+
         // Ambil 3 aktivitas lain yang tidak memiliki ID yang sama (aktivitas terkait)
-        $data['aktivitasTerkait'] = $aktivitas->where('id_aktivitas !=', $slug)->limit(3)->findAll();
+        $data['aktivitasTerkait'] = $aktivitas->where('id_aktivitas !=', $id_aktivitas)
+            ->limit(3)
+            ->find();
 
         return view('detail-aktivitas-en', $data);
     }

@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Meta Tags -->
-    <meta name="title" content="SonicPulse: Welcome to the World of Quality Audio">
+    <meta name="title" content="Home | SonicPulse: Welcome to the World of Quality Audio">
     <meta name="description"
         content="Discover the best audio experience with SonicPulse. Enjoy a range of high-quality audio products designed to satisfy your ears.">
-    <title>SonicPulse | Welcome to the World of Quality Audio</title>
+    <title>Home | SonicPulse: Welcome to the World of Quality Audio</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">

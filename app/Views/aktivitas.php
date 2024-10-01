@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Meta Tags -->
-    <meta name="title" content="Aktivitas SonicPulse: Kegiatan dan Event Terkini">
+    <meta name="title" content="Aktivitas | SonicPulse: Kegiatan dan Event Terkini">
     <meta name="description"
         content="Ikuti kegiatan terbaru dari SonicPulse. Dapatkan informasi tentang acara dan aktivitas yang kami selenggarakan.">
-    <title>Aktivitas SonicPulse | Kegiatan dan Event Terkini</title>
+    <title>Aktivitas | SonicPulse: Kegiatan dan Event Terkini</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">

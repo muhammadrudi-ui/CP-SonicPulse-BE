@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Meta Tags -->
-    <meta name="title" content="Kontak SonicPulse: Hubungi Kami">
+    <meta name="title" content="Kontak | SonicPulse: Hubungi Kami untuk Pertanyaan dan Bantuan">
     <meta name="description"
-        content="Jika Anda memiliki pertanyaan atau ingin berkolaborasi, hubungi tim SonicPulse melalui informasi kontak berikut.">
-    <title>Kontak SonicPulse | Hubungi Kami</title>
+        content="Silakan hubungi kami untuk mendapatkan informasi lebih lanjut atau dukungan yang Anda butuhkan.">
+    <title>Kontak | SonicPulse: Hubungi Kami untuk Pertanyaan dan Bantuan</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">

@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Meta Tags -->
-    <meta name="title" content="Contact SonicPulse: Get in Touch">
-    <meta name="description"
-        content="If you have any questions or would like to collaborate, reach out to the SonicPulse team through the following contact information.">
-    <title>Contact SonicPulse | Get in Touch</title>
+    <meta name="title" content="Contact | SonicPulse: Contact Us for Inquiries and Assistance">
+    <meta name="description" content="Please contact us for more information or support you may need.">
+    <title>Contact | SonicPulse: Contact Us for Inquiries and Assistance</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">

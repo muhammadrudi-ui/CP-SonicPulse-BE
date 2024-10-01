@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Meta Tags -->
-    <meta name="title" content="About SonicPulse: Contact Us for Inquiries and Assistance">
-    <meta name="description" content="Please contact us for more information or support you may need.">
-    <title>About SonicPulse | Contact Us for Inquiries and Assistance</title>
+    <meta name="title" content="About | SonicPulse: The Ultimate Audio Experience">
+    <meta name="description"
+        content="SonicPulse offers headsets with clear sound and comfort for the best audio experience.">
+    <title>About | SonicPulse: The Ultimate Audio Experience</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
