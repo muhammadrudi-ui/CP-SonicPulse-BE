@@ -6,6 +6,7 @@ use App\Models\Produk;
 use App\Models\Artikel;
 use App\Models\Profil;
 use App\Models\Slider;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class Home extends BaseController
 {
@@ -58,10 +59,10 @@ class Home extends BaseController
         $artikel = new Artikel();
         $profil = new Profil();
 
-        // Ambil semua produk dari database
+        // Ambil semua artikel dari database
         $items = $artikel->findAll();
 
-        // Loop melalui data produk yang diambil
+        // Loop untuk membuat slug
         foreach ($items as &$item) {
             $item['slug'] = url_title($item['judul_artikel'], '-', true);
         }
@@ -78,11 +79,18 @@ class Home extends BaseController
         $artikel = new Artikel();
         $profil = new Profil();
 
-        // Ambil semua produk dari database
+        // Initialize GoogleTranslate for Indonesian to English translation
+        $tr = new GoogleTranslate('en');
+
+        // Ambil semua artikel dari database
         $items = $artikel->findAll();
 
-        // Loop melalui data produk yang diambil
+        // Loop untuk membuat slug dan translate artikel
         foreach ($items as &$item) {
+            // Translate title and description from Indonesian to English
+            $item['judul_artikel'] = $tr->translate($item['judul_artikel']);
+            $item['deskripsi_artikel'] = $tr->translate($item['deskripsi_artikel']);
+
             $item['slug'] = url_title($item['judul_artikel'], '-', true);
         }
 
@@ -98,31 +106,47 @@ class Home extends BaseController
         $artikel = new Artikel();
         $profil = new Profil();
 
-        // Ambil semua profil untuk ditampilkan
         $data['profils'] = $profil->findAll();
         $items = $artikel->findAll();
-
-        // Cari produk berdasarkan slug
         $data['artikel'] = null;
+
+        $tr = new GoogleTranslate('en');
+
         foreach ($items as $item) {
-            if (url_title($item['judul_artikel'], '-', true) === $slug) {
+            $item['slug_id'] = url_title($item['judul_artikel'], '-', true);
+            $item['slug_en'] = url_title($tr->translate($item['judul_artikel']), '-', true);
+
+            // Jika slug cocok, ambil artikel tersebut
+            if ($item['slug_id'] === $slug) {
                 $data['artikel'] = $item;
+
                 break;
             }
         }
 
-        // Jika produk tidak ditemukan, redirect ke halaman produk
         if (!$data['artikel']) {
             return redirect()->to('/id/artikel');
         }
 
-        // Ambil ID artikel yang sedang dibuka
+        // ARTIKEL TERKAIT Ambil ID artikel yang sedang dibuka
         $id_artikel = $data['artikel']['id_artikel'];
 
-        // Ambil 3 artikel lain yang tidak memiliki ID yang sama (artikel terkait)
-        $data['artikelTerkait'] = $artikel->where('id_artikel !=', $id_artikel)
-            ->limit(5)
-            ->find();
+        $relatedItems = $artikel->where('id_artikel !=', $id_artikel)->findAll();
+        $data['artikelTerkait'] = [];
+
+        foreach ($relatedItems as $relatedItem) {
+            // Buat slug untuk artikel terkait
+            $relatedSlug = url_title($relatedItem['judul_artikel'], '-', true);
+
+            // Memastikan slug artikel terkait tidak sama dengan artikel yang sedang dibuka
+            if ($relatedSlug !== $slug) {
+                $data['artikelTerkait'][] = $relatedItem;
+
+                if (count($data['artikelTerkait']) >= 5) {
+                    break;
+                }
+            }
+        }
 
         return view('detail-artikel', $data);
     }
@@ -132,31 +156,44 @@ class Home extends BaseController
         $artikel = new Artikel();
         $profil = new Profil();
 
-        // Ambil semua profil untuk ditampilkan
         $data['profils'] = $profil->findAll();
         $items = $artikel->findAll();
-
-        // Cari produk berdasarkan slug
         $data['artikel'] = null;
+
+        $tr = new GoogleTranslate('en');
+
         foreach ($items as $item) {
-            if (url_title($item['judul_artikel'], '-', true) === $slug) {
+            // Buat slug berdasarkan terjemahan judul artikel ke bahasa Inggris
+            $slug_en = url_title($tr->translate($item['judul_artikel']), '-', true);
+            $item['slug_id'] = url_title($item['judul_artikel'], '-', true);
+
+            // Jika slug cocok dengan versi Inggris, ambil artikel
+            if ($slug_en === $slug) {
                 $data['artikel'] = $item;
                 break;
             }
         }
 
-        // Jika produk tidak ditemukan, redirect ke halaman produk
+        $data['artikel']['judul_artikel'] = $tr->translate($data['artikel']['judul_artikel']);
+        $data['artikel']['deskripsi_artikel'] = $tr->translate($data['artikel']['deskripsi_artikel']);
+
         if (!$data['artikel']) {
-            return redirect()->to('/id/artikel');
+            return redirect()->to('/en/article');
         }
 
         // Ambil ID artikel yang sedang dibuka
         $id_artikel = $data['artikel']['id_artikel'];
 
-        // Ambil 3 artikel lain yang tidak memiliki ID yang sama (artikel terkait)
+        // Ambil 3 artikel terkait lainnya (artikel yang tidak memiliki ID yang sama)
         $data['artikelTerkait'] = $artikel->where('id_artikel !=', $id_artikel)
             ->limit(5)
             ->find();
+
+        // Translate judul artikel terkait ke bahasa Inggris
+        foreach ($data['artikelTerkait'] as &$relatedArtikel) {
+            $relatedArtikel['slug_en'] = url_title($tr->translate($relatedArtikel['judul_artikel']), '-', true);
+            $relatedArtikel['judul_artikel'] = $tr->translate($relatedArtikel['judul_artikel']);  // Terjemahkan judul terkait
+        }
 
         return view('detail-artikel-en', $data);
     }

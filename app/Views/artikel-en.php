@@ -573,8 +573,8 @@
                                 <span class="text" style="font-size: 12px;">
                                     <?= date('Y-m-d', strtotime($ar['created_at'])); ?>
                                 </span>
-                                <a href="<?= base_url('/en/article/' . $ar['slug']); ?>" class="btn btn-primary">Baca
-                                    Selengkapnya</a>
+                                <a href="<?= base_url('/en/article/' . $ar['slug']); ?>" class="btn btn-primary">Read
+                                    More</a>
                             </div>
                         </div>
                     </div>

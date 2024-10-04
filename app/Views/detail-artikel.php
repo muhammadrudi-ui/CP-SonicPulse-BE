@@ -509,12 +509,12 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item"
-                                    href="/en/article/<?= url_title($artikel['judul_artikel'], '-', true); ?>">English</a>
+                            <li><a class="dropdown-item" href="/en/article/<?= $artikel['slug_en'] ?>">English</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
+
             </div>
         </div>
     </nav>

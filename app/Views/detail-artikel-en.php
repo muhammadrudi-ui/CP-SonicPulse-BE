@@ -508,8 +508,7 @@
                             Language
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item"
-                                    href="/id/artikel/<?= url_title($artikel['judul_artikel'], '-', true); ?>">Indonesia</a>
+                            <li><a class="dropdown-item" href="/id/artikel/<?= $artikel['slug_id'] ?>">Indonesia</a>
                             </li>
                             <li><a class="dropdown-item" href="#">English</a></li>
                         </ul>
@@ -542,18 +541,18 @@
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class=" col-lg-4">
                 <div class="recommendation-section">
                     <h5 class="section-title">Also read other articles</h5>
                     <!-- Card 1 -->
                     <?php foreach ($artikelTerkait as $artikel): ?>
-                        <a href="<?= base_url('/en/article/' . url_title($artikel['judul_artikel'], '-', true)); ?>"
+                        <a href="<?= base_url('/en/article/' . url_title($artikel['slug_en'], '-', true)); ?>"
                             style="text-decoration: none; color: inherit;">
-                            <div class="recommendation-card">
-                                <img src="<?= base_url('IMG/' . $artikel['foto_artikel']); ?>" alt="Image-Artikel-Lainnya"
-                                    class="recommendation-image" loading="lazy">
+                            <div class="recommendation-card"> <img src="<?= base_url('IMG/' . $artikel['foto_artikel']); ?>"
+                                    alt="Image-Artikel-Lainnya" class="recommendation-image" loading="lazy">
                                 <div class="recommendation-content">
-                                    <h6 class="recommendation-title"><?= $artikel['judul_artikel']; ?>
+                                    <h6 class="recommendation-title">
+                                        <?= $artikel['judul_artikel']; ?>
                                     </h6>
                                     <p class=" recommendation-date">
                                         <?= date('Y-m-d', strtotime($artikel['created_at'])); ?>
@@ -571,7 +570,8 @@
     <!-- Footer -->
     <?php foreach ($profils as $footer): ?>
         <footer>
-            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
+            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy;
+                <?= date('Y'); ?> Copyright:
                 <?= $footer['teks_footer']; ?>
         </footer>
     <?php endforeach; ?>
