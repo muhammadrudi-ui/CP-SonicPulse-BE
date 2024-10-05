@@ -19,9 +19,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap');
 
+    <link href="https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
         body {
             font-family: 'Manrope', sans-serif;
             margin: 0;
@@ -45,7 +46,6 @@
             padding-right: 0;
         }
 
-        /* Loader CSS */
         .loader-container {
             position: fixed;
             top: 0;
@@ -56,9 +56,7 @@
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.8);
-            /* Optional: semi-transparent background */
             z-index: 9999;
-            /* Make sure loader is on top */
         }
 
         .loader {
@@ -287,7 +285,7 @@
             }
         }
 
-        /* Responsif untuk ukuran layar 375px */
+        /* Mobile M 375px */
         @media (max-width: 375px) {
             .navbar {
                 padding: 10px 15px;
@@ -322,7 +320,7 @@
             }
         }
 
-        /* Responsif untuk ukuran layar 320px */
+        /* Mobile S 320px */
         @media (max-width: 320px) {
             .navbar {
                 padding: 10px 10px;
@@ -419,7 +417,7 @@
         <h1>Contact Us</h1>
     </div>
 
-    <!-- Kontak Kami -->
+    <!-- Contact Us -->
     <div class="container kontak-kami">
         <?php foreach ($profils as $p): ?>
             <div class="map-container">
@@ -427,7 +425,6 @@
                     src="<?= $p['link_maps']; ?>https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.7154260405!2d106.68943071640627!3d-6.229386734889665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e4c63ab555%3A0xb56e1f64ffb010b!2sManchester!5e0!3m2!1sen!2sid!4v1687355172765!5m2!1sen!2sid"
                     allowfullscreen="" loading="lazy"></iframe>
             </div>
-
             <div class="container kontak-kami text-center">
                 <h3>Contact Us here</h3>
                 <div class="row mt-4">
@@ -437,14 +434,12 @@
                             <input type="text" id="alamat" value="<?= $p['alamat']; ?>" readonly class="form-control">
                         </div>
                     </div>
-
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="no_hp">Telephone:</label>
                             <input type="tel" id="no_hp" value="<?= $p['no_hp']; ?>" readonly class="form-control">
                         </div>
                     </div>
-
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="email">Email:</label>
@@ -453,7 +448,6 @@
                     </div>
                 </div>
             </div>
-
         <?php endforeach; ?>
     </div>
 

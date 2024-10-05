@@ -20,9 +20,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap');
 
+    <link href="https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
         body {
             font-family: 'Manrope', sans-serif;
             margin: 0;
@@ -46,7 +47,6 @@
             padding-right: 0;
         }
 
-        /* Loader CSS */
         .loader-container {
             position: fixed;
             top: 0;
@@ -57,9 +57,7 @@
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.8);
-            /* Optional: semi-transparent background */
             z-index: 9999;
-            /* Make sure loader is on top */
         }
 
         .loader {
@@ -161,21 +159,17 @@
 
         .card img {
             margin: 10px auto;
-            /* Menambahkan ruang di sekitar gambar */
             background: #fff;
             width: 92%;
             height: 280px;
             border-radius: 14px;
-            /* Opsional: membuat sudut gambar lebih lembut */
+
         }
 
         .card-img-top {
             width: 100%;
-            /* Mengatur lebar gambar sesuai dengan lebar card */
             object-fit: cover;
-            /* Memastikan gambar tidak terdistorsi dan mengisi area dengan baik */
             border-radius: 14px;
-            /* Opsional: membuat sudut gambar lebih lembut */
         }
 
         .card-text {
@@ -185,7 +179,6 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: normal;
-            /* Memungkinkan teks membungkus */
             text-align: justify;
             color: #555;
         }
@@ -201,9 +194,7 @@
             background-color: #009EF2;
             color: #ffffff;
             transform: scale(1.05);
-            /* Membuat card membesar sedikit saat hover */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            /* Menambahkan bayangan */
         }
 
         .card:hover .card-title,
@@ -430,47 +421,49 @@
         <div class="container-fluid">
             <?php foreach ($profils as $logo): ?>
                 <a class="navbar-brand" href="#">
-                    <img src="<?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo" class="logo" loading="lazy">
-                </a>
-            <?php endforeach; ?>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/id'); ?>">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/id/tentang'); ?>">Tentang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/id/artikel'); ?>">Artikel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/id/produk'); ?>">Produk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: #009EF2;"
-                            href="<?= base_url('/id/aktivitas'); ?>">Aktivitas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/id/kontak'); ?>">Kontak</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Bahasa
+                        <img src=" <?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo" class="logo"
+                    loading="lazy">
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                            <li><a class="dropdown-item" href="<?= base_url('/en/activity'); ?>">English</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+                <?php endforeach; ?>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('/id'); ?>">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('/id/tentang'); ?>">Tentang</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('/id/artikel'); ?>">Artikel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('/id/produk'); ?>">Produk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #009EF2;"
+                            href=" <?= base_url('/id/aktivitas'); ?>">Aktivitas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('/id/kontak'); ?>">Kontak</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Bahasa
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Indonesia</a></li>
+                            <li><a class=" dropdown-item" href="<?= base_url('/en/activity'); ?>">English</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                </div>
     </nav>
 
     <!-- Background -->
@@ -484,41 +477,44 @@
             <div class="row">
                 <?php foreach ($aktivitass as $aktiv): ?>
                     <div class="col-md-4">
-                        <a href="<?= base_url('/id/aktivitas/' . $aktiv['slug']); ?>"
-                            style="text-decoration: none; color: inherit;">
-                            <div class="card">
-                                <img src="<?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top"
-                                    alt="<?= $aktiv['nama_aktivitas_in']; ?>" loading="lazy">
-                                <div class="card-body">
-                                    <h3 class="card-title"><?= $aktiv['nama_aktivitas_in']; ?></h3>
-                                    <p class="card-text"><?= $aktiv['deskripsi_aktivitas_in']; ?></p>
-                                </div>
+                            <a href=" <?= base_url('/id/aktivitas/' . $aktiv['slug']); ?>"
+                        style="text-decoration: none; color: inherit;">
+                        <div class="card">
+                                    <img src="<?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top"
+                            alt="<?= $aktiv['nama_aktivitas_in']; ?>" loading="lazy">
+                            <div class="card-body">
+                                <h3 class="card-title"><?= $aktiv['nama_aktivitas_in']; ?></h3>
+                                        <p class=" card-text">
+                                    <?= $aktiv['deskripsi_aktivitas_in']; ?>
+                                    </p>
                             </div>
+                        </div>
                         </a>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+                            </div>
+                    <?php endforeach; ?>
+                </div>
         </div>
     </div>
 
     <!-- Footer -->
     <?php foreach ($profils as $footer): ?>
         <footer>
-            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
+            <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy;
+                <?= date('Y'); ?> Copyright:
                 <?= $footer['teks_footer']; ?>
-        </footer>
-    <?php endforeach; ?>
+                    </footer>
+            <?php endforeach; ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+                crossorigin="anonymous"></script>
 
-    <script>
-        // Hide loader after page loads
-        window.addEventListener('load', function () {
-            document.querySelector('.loader-container').style.display = 'none';
-        });
-    </script>
+            <script>
+                // Hide loader after page loads
+                window.addEventListener('load', function () {
+                    document.querySelector('.loader-container').style.display = 'none';
+                });
+            </script>
 </body>
 
 </html>

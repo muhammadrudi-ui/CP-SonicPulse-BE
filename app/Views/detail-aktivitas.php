@@ -23,9 +23,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap');
 
+    <link href="https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
         body {
             font-family: 'Manrope', sans-serif;
             margin: 0;
@@ -49,7 +50,6 @@
             padding-right: 0;
         }
 
-        /* Loader CSS */
         .loader-container {
             position: fixed;
             top: 0;
@@ -60,9 +60,7 @@
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.8);
-            /* Optional: semi-transparent background */
             z-index: 9999;
-            /* Make sure loader is on top */
         }
 
         .loader {
@@ -193,32 +191,25 @@
 
         .card img {
             margin: 10px auto;
-            /* Menambahkan ruang di sekitar gambar */
             background: #fff;
             width: 92%;
             height: 280px;
             border-radius: 14px;
-            /* Opsional: membuat sudut gambar lebih lembut */
         }
 
         .card-img-top {
             width: 100%;
-            /* Mengatur lebar gambar sesuai dengan lebar card */
             object-fit: cover;
-            /* Memastikan gambar tidak terdistorsi dan mengisi area dengan baik */
             border-radius: 14px;
-            /* Opsional: membuat sudut gambar lebih lembut */
         }
 
         .card-text {
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
-
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: normal;
-            /* Memungkinkan teks membungkus */
             text-align: justify;
             color: #555;
         }
@@ -234,9 +225,7 @@
             background-color: #009EF2;
             color: #ffffff;
             transform: scale(1.05);
-            /* Membuat card membesar sedikit saat hover */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            /* Menambahkan bayangan */
         }
 
         .card:hover .card-title,
@@ -528,15 +517,11 @@
         <h1>Detail Aktivitas</h1>
     </div>
 
+    <!-- Isi Konten  -->
     <div class="container">
-        <!-- Judul Aktivitas -->
         <div class="activity-title"><?= $aktivitas['nama_aktivitas_in']; ?></div>
-
-        <!-- Gambar Utama -->
         <img src="<?= base_url('IMG/' . $aktivitas['foto_aktivitas']); ?>" class="main-image" alt="Main Activity Image"
             loading="lazy">
-
-        <!-- Isi Aktivitas -->
         <div class="activity-content">
             <p><?= $aktivitas['deskripsi_aktivitas_in']; ?></p>
         </div>
@@ -546,15 +531,13 @@
     <!-- Garis Pemisah -->
     <hr class="my-4">
 
-    <!-- Related Produk Section -->
+    <!-- Bagian Produk Terkait -->
     <div class="related-products text-center">
         <h3 style="color: #009EF2;">Aktivitas Terkait</h3>
     </div>
 
-    <!-- card aktivitas -->
     <div class="container mt-2 mb-2">
         <div class="row">
-
             <?php foreach ($aktivitasTerkait as $aktivitas): ?>
                 <div class="col-md-4">
                     <a href="<?= base_url('/id/aktivitas/' . url_title($aktivitas['nama_aktivitas_in'], '-', true)); ?>"
@@ -572,7 +555,6 @@
                     </a>
                 </div>
             <?php endforeach; ?>
-
         </div>
     </div>
 
@@ -584,8 +566,6 @@
         </footer>
     <?php endforeach; ?>
 
-    <!-- Script -->
-    <!-- Dropdown Nav -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>

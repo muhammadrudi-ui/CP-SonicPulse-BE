@@ -23,9 +23,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap');
 
+    <link href="https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
         body {
             font-family: 'Manrope', sans-serif;
             margin: 0;
@@ -49,7 +50,6 @@
             padding-right: 0;
         }
 
-        /* Loader CSS */
         .loader-container {
             position: fixed;
             top: 0;
@@ -60,9 +60,7 @@
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.8);
-            /* Optional: semi-transparent background */
             z-index: 9999;
-            /* Make sure loader is on top */
         }
 
         .loader {
@@ -156,14 +154,10 @@
 
         .img-fluid {
             width: 1000px;
-            /* Set a fixed width */
             height: 380px;
-            /* Set a fixed height */
             border-radius: 12px;
             object-fit: cover;
-            /* Ensure the image is scaled to fit the container */
             margin: 0 auto;
-            /* Center the image horizontally */
         }
 
         .card-text {
@@ -244,14 +238,10 @@
 
             .img-fluid {
                 width: 800px;
-                /* Set a fixed width */
                 height: 380px;
-                /* Set a fixed height */
                 border-radius: 12px;
                 object-fit: cover;
-                /* Ensure the image is scaled to fit the container */
                 margin: 0 auto;
-                /* Center the image horizontally */
             }
 
             h2 {
@@ -303,14 +293,10 @@
 
             .img-fluid {
                 width: 800px;
-                /* Set a fixed width */
                 height: 280px;
-                /* Set a fixed height */
                 border-radius: 12px;
                 object-fit: cover;
-                /* Ensure the image is scaled to fit the container */
                 margin: 0 auto;
-                /* Center the image horizontally */
             }
 
             h2 {
@@ -362,14 +348,10 @@
 
             .img-fluid {
                 width: 800px;
-                /* Set a fixed width */
                 height: 230px;
-                /* Set a fixed height */
                 border-radius: 12px;
                 object-fit: cover;
-                /* Ensure the image is scaled to fit the container */
                 margin: 0 auto;
-                /* Center the image horizontally */
             }
 
             h2 {
@@ -421,14 +403,10 @@
 
             .img-fluid {
                 width: 800px;
-                /* Set a fixed width */
                 height: 180px;
-                /* Set a fixed height */
                 border-radius: 12px;
                 object-fit: cover;
-                /* Ensure the image is scaled to fit the container */
                 margin: 0 auto;
-                /* Center the image horizontally */
             }
 
             h2 {
@@ -545,7 +523,6 @@
             <div class="col-lg-4">
                 <div class="recommendation-section">
                     <h5 class="section-title">Baca Juga Artikel Lainnya</h5>
-                    <!-- Card -->
                     <?php foreach ($artikelTerkait as $artikel): ?>
                         <a href="<?= base_url('/id/artikel/' . url_title($artikel['judul_artikel'], '-', true)); ?>"
                             style="text-decoration: none; color: inherit;">

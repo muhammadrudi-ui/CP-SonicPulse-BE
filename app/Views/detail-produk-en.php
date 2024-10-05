@@ -22,9 +22,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap');
 
+    <link href="https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
         body {
             font-family: 'Manrope', sans-serif;
             margin: 0;
@@ -48,7 +49,6 @@
             padding-right: 0;
         }
 
-        /* Loader CSS */
         .loader-container {
             position: fixed;
             top: 0;
@@ -59,9 +59,7 @@
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.8);
-            /* Optional: semi-transparent background */
             z-index: 9999;
-            /* Make sure loader is on top */
         }
 
         .loader {
@@ -156,9 +154,7 @@
             width: 100%;
             max-width: 600px;
             height: 400px;
-            /* Ukuran tinggi tetap */
             object-fit: cover;
-            /* Menjaga proporsi gambar */
             margin-bottom: 10px;
             border-radius: 12px;
         }
@@ -185,21 +181,16 @@
 
         .card img {
             margin: 10px auto;
-            /* Menambahkan ruang di sekitar gambar */
             background: #fff;
             width: 92%;
             height: 280px;
             border-radius: 14px;
-            /* Opsional: membuat sudut gambar lebih lembut */
         }
 
         .card-img-top {
             width: 100%;
-            /* Mengatur lebar gambar sesuai dengan lebar card */
             object-fit: cover;
-            /* Memastikan gambar tidak terdistorsi dan mengisi area dengan baik */
             border-radius: 14px;
-            /* Opsional: membuat sudut gambar lebih lembut */
         }
 
         .card-text {
@@ -209,7 +200,6 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: normal;
-            /* Memungkinkan teks membungkus */
             text-align: justify;
         }
 
@@ -223,9 +213,7 @@
             background-color: #009EF2;
             color: #ffffff;
             transform: scale(1.05);
-            /* Membuat card membesar sedikit saat hover */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            /* Menambahkan bayangan */
         }
 
         .card:hover .card-title {
@@ -489,7 +477,7 @@
         <h1>Product Details</h1>
     </div>
 
-    <!-- Konten Utama -->
+    <!-- Main Content -->
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-6">
@@ -499,14 +487,13 @@
             <div class="col-md-6">
                 <div class="product-description">
                     <h2><?= $produk['nama_produk_en']; ?></h2>
-                    <!-- Deskripsi -->
                     <p style="color: #555;"><?= $produk['deskripsi_produk_en']; ?></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Garis Pemisah -->
+    <!-- Dividing Line -->
     <hr class="my-4">
 
     <!-- Related Produk Section -->
@@ -514,11 +501,9 @@
         <h3 style="color: #009EF2;">Related Products</h3>
     </div>
 
-    <!-- card Produk -->
     <div class="container mt-4 mb-5">
         <div class="row">
             <?php foreach ($produkTerkait as $produk): ?>
-                <!-- Card Produk Terkait -->
                 <div class="col-md-4">
                     <a href="<?= base_url('/en/product/' . url_title($produk['nama_produk_en'], '-', true)); ?>"
                         style="text-decoration: none; color: #009EF2;">
@@ -543,8 +528,6 @@
         </footer>
     <?php endforeach; ?>
 
-    <!-- Script -->
-    <!-- Dropdown Nav -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>

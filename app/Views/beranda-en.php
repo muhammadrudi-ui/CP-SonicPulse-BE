@@ -20,9 +20,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap');
 
+    <link href="https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap" rel="stylesheet">
+    <style>
         body {
             font-family: 'Manrope', sans-serif;
             margin: 0;
@@ -148,14 +148,12 @@
 
         .image-logo {
             max-width: 20%;
-            /* Agar gambar tidak melebihi ukuran kontainernya */
             height: auto;
         }
 
         .tentang-kami {
             width: 100%;
             height: auto;
-            /* Ubah agar tinggi mengikuti konten */
             padding-bottom: 50px;
         }
 
@@ -198,7 +196,6 @@
         .stacked-images-container {
             display: flex;
             justify-content: center;
-            /* Posisikan gambar di tengah */
             align-items: center;
             width: 100%;
         }
@@ -250,30 +247,23 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            /* Memastikan konten di dalam kartu dimulai dari atas */
             overflow: hidden;
-            /* Menyembunyikan konten yang meluap dari kartu */
             border: 2px solid #009EF2;
             border-radius: 18px;
         }
 
         .card img {
             margin: 10px auto;
-            /* Menambahkan ruang di sekitar gambar */
             background: #fff;
             width: 92%;
             height: 280px;
             border-radius: 14px;
-            /* Opsional: membuat sudut gambar lebih lembut */
         }
 
         .card-img-top {
             width: 100%;
-            /* Mengatur lebar gambar sesuai dengan lebar card */
             object-fit: cover;
-            /* Memastikan gambar tidak terdistorsi dan mengisi area dengan baik */
             border-radius: 14px;
-            /* Opsional: membuat sudut gambar lebih lembut */
         }
 
         .card-title {
@@ -287,11 +277,8 @@
         .card-title,
         .card-text {
             white-space: nowrap;
-            /* Tidak membungkus teks ke baris baru */
             overflow: hidden;
-            /* Menyembunyikan teks yang meluap */
             text-overflow: ellipsis;
-            /* Menampilkan elipsis untuk teks yang meluap */
         }
 
         .card:hover {
@@ -468,17 +455,13 @@
 
             .tentang-kami img {
                 margin-bottom: 20px;
-                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 16px;
                 margin-right: 0;
-                /* Hilangkan margin kanan */
                 margin-left: 0;
-                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -550,17 +533,13 @@
 
             .tentang-kami img {
                 margin-bottom: 20px;
-                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 14px;
                 margin-right: 0;
-                /* Hilangkan margin kanan */
                 margin-left: 0;
-                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -632,17 +611,13 @@
 
             .tentang-kami img {
                 margin-bottom: 20px;
-                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 12px;
                 margin-right: 0;
-                /* Hilangkan margin kanan */
                 margin-left: 0;
-                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -780,7 +755,7 @@
     <?php endforeach; ?>
 
 
-    <!-- Tentang Kami -->
+    <!-- About Us -->
     <div class="container-fluid tentang-kami" style="background-color: #F5FAFF;">
         <?php foreach ($profils as $about): ?>
             <h1 class="text-center mt-5 pt-5">About Us</h1>
@@ -801,7 +776,7 @@
                         <?= $about['deskripsi_perusahaan_en']; ?>
                     </p>
                     <div class="text">
-                        <a href="/en/about" class="btn baca-selengkapnya">Read more</a>
+                        <a href="<?= base_url('/en/about'); ?>" class="btn baca-selengkapnya">Read more</a>
                     </div>
                 </div>
             </div>
@@ -809,7 +784,7 @@
     </div>
 
 
-    <!-- Produk Kami -->
+    <!-- Our Products -->
     <div class="container-fluid produk-kami" ;>
         <h1 class="text-center mt-5">Our Products</h1>
         <div class="cards-container">
@@ -831,7 +806,7 @@
         </div>
     </div>
 
-    <!-- Aktivitas Kami -->
+    <!-- Our Activities -->
     <div class="container-fluid produk-kami" style="background-color: #F5FAFF;">
         <h1 class="text-center">Our Activities</h1>
         <div class="cards-container">
@@ -855,7 +830,7 @@
         </div>
     </div>
 
-    <!-- Kontak Kami -->
+    <!-- Contact Us -->
     <div class="container kontak-kami">
         <h1 class="text-center">Contact Us</h1>
         <?php foreach ($profils as $p): ?>
@@ -905,13 +880,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
         </script>
-
-    <script>
-        // Hide loader after page loads
-        window.addEventListener('load', function () {
-            document.querySelector('.loader-container').style.display = 'none';
-        });
-    </script>
 
     <script>
         // Hide loader after page loads

@@ -9,7 +9,7 @@
     <meta name="title" content="Beranda | SonicPulse: Selamat Datang di Dunia Audio Berkualitas">
     <meta name="description"
         content="Temukan pengalaman audio terbaik dengan SonicPulse. Nikmati berbagai produk audio berkualitas tinggi yang dirancang untuk memuaskan telinga Anda.">
-    <title>Beranda | SonicPulse:Selamat Datang di Dunia Audio Berkualitas"</title>
+    <title>Beranda | SonicPulse: Selamat Datang di Dunia Audio Berkualitas"</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
@@ -20,9 +20,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Marope:wght@400;700&display=swap');
-
         body {
             font-family: 'Manrope', sans-serif;
             margin: 0;
@@ -148,14 +147,12 @@
 
         .image-logo {
             max-width: 20%;
-            /* Agar gambar tidak melebihi ukuran kontainernya */
             height: auto;
         }
 
         .tentang-kami {
             width: 100%;
             height: auto;
-            /* Ubah agar tinggi mengikuti konten */
             padding-bottom: 50px;
         }
 
@@ -198,7 +195,6 @@
         .stacked-images-container {
             display: flex;
             justify-content: center;
-            /* Posisikan gambar di tengah */
             align-items: center;
             width: 100%;
         }
@@ -250,30 +246,23 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            /* Memastikan konten di dalam kartu dimulai dari atas */
             overflow: hidden;
-            /* Menyembunyikan konten yang meluap dari kartu */
             border: 2px solid #009EF2;
             border-radius: 18px;
         }
 
         .card img {
             margin: 10px auto;
-            /* Menambahkan ruang di sekitar gambar */
             background: #fff;
             width: 92%;
             height: 280px;
             border-radius: 14px;
-            /* Opsional: membuat sudut gambar lebih lembut */
         }
 
         .card-img-top {
             width: 100%;
-            /* Mengatur lebar gambar sesuai dengan lebar card */
             object-fit: cover;
-            /* Memastikan gambar tidak terdistorsi dan mengisi area dengan baik */
             border-radius: 14px;
-            /* Opsional: membuat sudut gambar lebih lembut */
         }
 
         .card-title {
@@ -287,11 +276,8 @@
         .card-title,
         .card-text {
             white-space: nowrap;
-            /* Tidak membungkus teks ke baris baru */
             overflow: hidden;
-            /* Menyembunyikan teks yang meluap */
             text-overflow: ellipsis;
-            /* Menampilkan elipsis untuk teks yang meluap */
         }
 
         .card:hover {
@@ -468,17 +454,13 @@
 
             .tentang-kami img {
                 margin-bottom: 20px;
-                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 16px;
                 margin-right: 0;
-                /* Hilangkan margin kanan */
                 margin-left: 0;
-                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -550,17 +532,13 @@
 
             .tentang-kami img {
                 margin-bottom: 20px;
-                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 14px;
                 margin-right: 0;
-                /* Hilangkan margin kanan */
                 margin-left: 0;
-                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -632,17 +610,13 @@
 
             .tentang-kami img {
                 margin-bottom: 20px;
-                /* Beri jarak bawah agar tidak terlalu rapat dengan teks */
                 width: 100%;
-                /* Pastikan gambar tetap proporsional */
             }
 
             .tentang-kami p {
                 font-size: 12px;
                 margin-right: 0;
-                /* Hilangkan margin kanan */
                 margin-left: 0;
-                /* Hilangkan margin kiri */
             }
 
             .baca-selengkapnya {
@@ -801,7 +775,7 @@
                         <?= $about['deskripsi_perusahaan_in']; ?>
                     </p>
                     <div class="text">
-                        <a href="/id/tentang" class="btn baca-selengkapnya">Baca Selengkapnya</a>
+                        <a href="<?= base_url('/id/tentang'); ?>" class="btn baca-selengkapnya">Baca Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -898,13 +872,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
         </script>
-
-    <script>
-        // Hide loader after page loads
-        window.addEventListener('load', function () {
-            document.querySelector('.loader-container').style.display = 'none';
-        });
-    </script>
 
     <script>
         // Hide loader after page loads
