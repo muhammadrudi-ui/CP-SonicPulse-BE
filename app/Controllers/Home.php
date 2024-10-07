@@ -17,10 +17,22 @@ class Home extends BaseController
         $produk = new Produk();
         $aktivitas = new Aktivitas();
 
+        $itemsproduk = $produk->findAll(4);
+        $itemsaktivitas = $aktivitas->findAll(3);
+
+
+        foreach ($itemsproduk as &$item) {
+            $item['slug'] = url_title($item['nama_produk_in'], '-', true);
+        }
+
+        foreach ($itemsaktivitas as &$item) {
+            $item['slug'] = url_title($item['nama_aktivitas_in'], '-', true);
+        }
+
         $data['sliders'] = $slider->findAll();
         $data['profils'] = $profil->findAll();
-        $data['produks'] = $produk->findAll(4);
-        $data['aktivitass'] = $aktivitas->findAll(3);
+        $data['produks'] = $itemsproduk;
+        $data['aktivitass'] = $itemsaktivitas;
         return view('beranda', $data);
     }
 
@@ -31,10 +43,22 @@ class Home extends BaseController
         $produk = new Produk();
         $aktivitas = new Aktivitas();
 
+        $itemsproduk = $produk->findAll(4);
+        $itemsaktivitas = $aktivitas->findAll(3);
+
+
+        foreach ($itemsproduk as &$item) {
+            $item['slug'] = url_title($item['nama_produk_en'], '-', true);
+        }
+
+        foreach ($itemsaktivitas as &$item) {
+            $item['slug'] = url_title($item['nama_aktivitas_en'], '-', true);
+        }
+
         $data['sliders'] = $slider->findAll();
         $data['profils'] = $profil->findAll();
-        $data['produks'] = $produk->findAll(4);
-        $data['aktivitass'] = $aktivitas->findAll(3);
+        $data['produks'] = $itemsproduk;
+        $data['aktivitass'] = $itemsaktivitas;
         return view('beranda-en', $data);
     }
 

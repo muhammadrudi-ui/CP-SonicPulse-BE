@@ -421,9 +421,7 @@
     <div class="container kontak-kami">
         <?php foreach ($profils as $p): ?>
             <div class="map-container">
-                <iframe
-                    src="<?= $p['link_maps']; ?>https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.7154260405!2d106.68943071640627!3d-6.229386734889665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e4c63ab555%3A0xb56e1f64ffb010b!2sManchester!5e0!3m2!1sen!2sid!4v1687355172765!5m2!1sen!2sid"
-                    allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="<?= $p['link_maps']; ?>" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <div class="container kontak-kami text-center">
                 <h3>Contact Us here</h3>
@@ -437,7 +435,11 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="no_hp">Telephone:</label>
-                            <input type="tel" id="no_hp" value="<?= $p['no_hp']; ?>" readonly class="form-control">
+                            <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $p['no_hp']); ?>"
+                                class="form-control text-decoration-none" target="_blank"
+                                style="background-color: #f8f9fa; color: #212529;">
+                                <?= $p['no_hp']; ?>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-4">

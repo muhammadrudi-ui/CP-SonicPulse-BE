@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="utf-8">
@@ -421,49 +421,47 @@
         <div class="container-fluid">
             <?php foreach ($profils as $logo): ?>
                 <a class="navbar-brand" href="#">
-                        <img src=" <?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo" class="logo"
-                    loading="lazy">
-                        </a>
-                <?php endforeach; ?>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('/id'); ?>">Beranda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('/id/tentang'); ?>">Tentang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('/id/artikel'); ?>">Artikel</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('/id/produk'); ?>">Produk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: #009EF2;"
+                    <img src=" <?= base_url('IMG/' . $logo['logo_perusahaan']); ?>" alt="Logo" class="logo" loading="lazy">
+                </a>
+            <?php endforeach; ?>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/id'); ?>">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/id/tentang'); ?>">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/id/artikel'); ?>">Artikel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/id/produk'); ?>">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #009EF2;"
                             href=" <?= base_url('/id/aktivitas'); ?>">Aktivitas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('/id/kontak'); ?>">Kontak</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Bahasa
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Indonesia</a></li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/id/kontak'); ?>">Kontak</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Bahasa
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Indonesia</a></li>
                             <li><a class=" dropdown-item" href="<?= base_url('/en/activity'); ?>">English</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                </div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <!-- Background -->
@@ -477,22 +475,22 @@
             <div class="row">
                 <?php foreach ($aktivitass as $aktiv): ?>
                     <div class="col-md-4">
-                            <a href=" <?= base_url('/id/aktivitas/' . $aktiv['slug']); ?>"
-                        style="text-decoration: none; color: inherit;">
-                        <div class="card">
-                                    <img src="<?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top"
-                            alt="<?= $aktiv['nama_aktivitas_in']; ?>" loading="lazy">
-                            <div class="card-body">
-                                <h3 class="card-title"><?= $aktiv['nama_aktivitas_in']; ?></h3>
-                                        <p class=" card-text">
-                                    <?= $aktiv['deskripsi_aktivitas_in']; ?>
+                        <a href=" <?= base_url('/id/aktivitas/' . $aktiv['slug']); ?>"
+                            style="text-decoration: none; color: inherit;">
+                            <div class="card">
+                                <img src="<?= base_url('IMG/' . $aktiv['foto_aktivitas']); ?>" class="card-img-top"
+                                    alt="<?= $aktiv['nama_aktivitas_in']; ?>" loading="lazy">
+                                <div class="card-body">
+                                    <h3 class="card-title"><?= $aktiv['nama_aktivitas_in']; ?></h3>
+                                    <p class=" card-text">
+                                        <?= $aktiv['deskripsi_aktivitas_in']; ?>
                                     </p>
+                                </div>
                             </div>
-                        </div>
                         </a>
-                            </div>
-                    <?php endforeach; ?>
-                </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 
@@ -502,19 +500,19 @@
             <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy;
                 <?= date('Y'); ?> Copyright:
                 <?= $footer['teks_footer']; ?>
-                    </footer>
-            <?php endforeach; ?>
+        </footer>
+    <?php endforeach; ?>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-                crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 
-            <script>
-                // Hide loader after page loads
-                window.addEventListener('load', function () {
-                    document.querySelector('.loader-container').style.display = 'none';
-                });
-            </script>
+    <script>
+        // Hide loader after page loads
+        window.addEventListener('load', function () {
+            document.querySelector('.loader-container').style.display = 'none';
+        });
+    </script>
 </body>
 
 </html>
