@@ -47,6 +47,7 @@
             padding-right: 0;
         }
 
+
         .loader-container {
             position: fixed;
             top: 0;
@@ -454,7 +455,7 @@
         <?php endforeach; ?>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer bagian bawah -->
     <?php foreach ($profils as $footer): ?>
         <footer>
             <div class="text-center p-3" style="background-color: #555; color:#ffff;"> &copy; <?= date('Y'); ?> Copyright:
